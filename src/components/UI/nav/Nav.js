@@ -1,6 +1,6 @@
 import classes from "./Nav.module.css";
 
-function Nav({ title, currMode, toggleCurrMode }) {
+function Nav({ currMode, toggleCurrMode }) {
 
   const handleClick = e => {
 
@@ -8,7 +8,7 @@ function Nav({ title, currMode, toggleCurrMode }) {
 
   return (
     <nav className={classes.root}>
-      <div>{title}</div>
+      <div>Posts</div>
       <button onClick={handleClick}>
         {currMode === "new" ? "Show All" : "Add New"}
       </button>

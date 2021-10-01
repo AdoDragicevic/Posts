@@ -11,23 +11,41 @@ import classes from "./Posts.module.css";
 
 function Posts({ posts, setPosts }) {
   
-  const [isListAll, toggleIsListAll] = useToggleState(false);
-  const [currPost, setCurrPost] = useState(null); 
+  const [content, setContent] = useState("new");
+  const [openedPost, setOpenedPost] = useState(null);
 
-  const showCurrContent = () => {
-    if (currPost) return <Show {...currPost} />;
-    if (isListAll) return <List posts={posts} openPost={setCurrPost} />;
-    return <New setPosts={setPosts} />;
+  const addPost = newPost => {
+    setPosts([newPost, ...posts]);
+  };
+  
+  const showPost = id => {
+    const post = posts.find(p => p.id === id);
+    setOpenedPost(post);
+    setContent("show");
+  };
+
+  const renderContent = () => {
+    switch(content) {
+      case "new":
+        return <New addPost={addPost} setContent={setContent} />;
+      case "list":
+        return <List showPost={showPost} posts={posts} />
+      case "show":
+        return <Show {...showPost} />;
+      default:
+        return null;
+    }
   };
 
   return (
     <>
-      <Nav title="Posts" isListAll={isListAll} toggle={toggleIsListAll} />
+      <Nav />
       <div className={classes.container}>
-        {showCurrContent()}
+        {renderContent()}
       </div>
     </>
   );
+
 };
 
 export default Posts;
