@@ -1,13 +1,17 @@
-import Posts from "./posts/Posts";
+import useLocalStorageState from "./hooks/useLocalStorageState";
+import { useState } from "react";
+
+import Posts from "./components/posts/Posts";
 
 import './App.css';
 
 function App() {
+  const [posts, setPosts] = useLocalStorageState("posts", []);
   return (
     <div className="App">
-      <Posts />
+      <p> hello </p>
     </div>
   );
-}
+};
 
 export default App;
