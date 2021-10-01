@@ -8,22 +8,15 @@ import Show from "./show/Show";
 import classes from "./Posts.module.css";
 
 
-function Posts(props) {
+function Posts({ posts, setPosts }) {
   
   const [currMode, setCurrMode] = useState("new");
   const [currPost, setCurrPost] = useState(null);
 
   const showCurrContent = () => {
-    switch(currMode) {
-      case "list":
-        return <List posts={props.posts} openPost={setCurrPost} />;
-      case "new":
-        return <New setPosts={props.setPosts} />
-      case "show":
-        return <Show currPost={currPost} />
-      default:
-        return null;
-    };
+    if (currPost) return <Show {...currPost} />;
+    if (currMode === "new") return <New setPosts={setPosts} />;
+    return <List posts={posts} openPost={setCurrPost} />;
   };
 
   return (
