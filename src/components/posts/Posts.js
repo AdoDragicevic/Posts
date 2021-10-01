@@ -16,6 +16,7 @@ function Posts({ posts, setPosts }) {
 
   const add = newPost => {
     setPosts([newPost, ...posts]);
+    setContent("list");
   };
   
   const show = id => {

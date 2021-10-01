@@ -3,33 +3,33 @@ import { useRef } from "react";
 import classes from "./Form.module.css";
 
 
-function Form(props) {
+function Form({ submit }) {
 
-  const nameInput = useRef();
-  const addressInput = useRef();
-  const descriptionTextarea = useRef();
+  const name = useRef();
+  const address = useRef();
+  const description = useRef();
 
   const handleSubmit = e => {
     e.preventDefault();
     const post = {
-      name: nameInput.current.value,
-      address: addressInput.current.value,
-      description: descriptionTextarea.current.value
+      name: name.current.value,
+      address: address.current.value,
+      description: description.current.value
     };
-    props.submit(post);
+    submit(post);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       
       <label htmlFor="name">Name</label>
-      <input id="name" type="text" name="name" ref={nameInput} required></input>
+      <input id="name" type="text" name="name" ref={name} required></input>
       
       <label htmlFor="addess">Address</label>
-      <input id="addess" type="text" name="address" ref={addressInput} required></input>
+      <input id="addess" type="text" name="address" ref={address} required></input>
       
       <label htmlFor="description">description</label>
-      <textarea id="description" name="description" ref={descriptionTextarea} required></textarea>
+      <textarea id="description" name="description" ref={description} required></textarea>
       
       <button type="submit">Submit</button>
 

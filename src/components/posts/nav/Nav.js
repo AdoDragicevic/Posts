@@ -2,7 +2,7 @@ import classes from "./Nav.module.css";
 
 function Nav({ content, setContent }) {
 
-  const handleClick = e => {
+  const handleClick = () => {
     const nextContent = content === "list" ? "new" : "list";
     setContent(nextContent);
   };
