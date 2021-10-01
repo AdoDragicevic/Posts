@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Input from "./Input";
 import Textarea from "./Textarea";

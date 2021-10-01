@@ -1,7 +1,7 @@
 import { useState } from "react/cjs/react.development";
 
-import Nav from "./nav/Nav";
-import Container from "../layout/Container";
+import Nav from "./layout/nav/Nav";
+import Container from "./layout/container/Container";
 import List from "./list/List";
 import New from "./new/New";
 import Show from "./show/Show";
