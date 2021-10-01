@@ -4,8 +4,10 @@ import Nav from "../UI/nav/Nav";
 import List from "./list/List";
 import New from "./new/New";
 import Show from "./show/Show";
+import UploadImg from "./UploadImg";
 
 import classes from "./Posts.module.css";
+
 
 function Posts(props) {
   
@@ -31,6 +33,7 @@ function Posts(props) {
       <div className={classes.container}>
         {showCurrContent()}
       </div>
+      <UploadImg />
     </>
   );
 };
