@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import classes from "./ListItem.module.css";
 
 function ListItem({ img, name, address, description }) {

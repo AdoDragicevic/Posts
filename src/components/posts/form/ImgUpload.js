@@ -1,4 +1,4 @@
-function ImgUpload({ onUpload, img }) {
+function ImgUpload({ onUpload, currImg }) {
 
   const handleChange = e => {
     onUpload(URL.createObjectURL(e.target.files[0]));
@@ -7,7 +7,7 @@ function ImgUpload({ onUpload, img }) {
   return (
     <div>
       <div>
-        <img src={img} />
+        <img src={currImg} />
       </div>
       <div>
         <input type="file" onChange={handleChange} />

@@ -45,9 +45,7 @@ function Posts({ posts, setPosts }) {
   return (
     <>
       <Nav content={content} setContent={setContent} />
-      <Container>
-        {renderContent()}
-      </Container>
+      <Container> {renderContent()} </Container>
     </>
   );
 

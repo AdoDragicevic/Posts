@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import Input from "./Input";
 import Textarea from "./Textarea";
@@ -35,7 +35,7 @@ function Form({ submit }) {
       <Input type="text" reference={name} name="name" isRequired />
       <Input type="text" reference={address} name="address" isRequired />
       <Textarea name="description" reference={description} isRequired />
-      <ImgUpload onUpload={handleImgUpload} img={img} />
+      <ImgUpload onUpload={handleImgUpload} currImg={img} />
       <button type="submit">Submit</button>
     </form>
   );
