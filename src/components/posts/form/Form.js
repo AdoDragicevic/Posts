@@ -21,7 +21,8 @@ function Form({ submit }) {
       name: name.current.value,
       address: address.current.value,
       description: description.current.value,
-      img
+      img,
+      date: new Date()
     };
     submit(inputData);
   };
