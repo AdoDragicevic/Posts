@@ -35,7 +35,10 @@ function Form({ submit }) {
       <Input type="text" reference={name} name="name" isRequired />
       <Input type="text" reference={address} name="address" isRequired />
       <Textarea name="description" reference={description} isRequired />
-      <ImgUpload onUpload={handleImgUpload} currImg={img} />
+      <div>
+        <img src={img} />
+        <ImgUpload onUpload={handleImgUpload} name="image" />
+      </div>
       <button type="submit">Submit</button>
     </form>
   );

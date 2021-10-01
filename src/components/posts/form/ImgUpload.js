@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ImgUpload({ onUpload, currImg }) {
+function ImgUpload({ name, onUpload, isRequired }) {
 
   const handleChange = e => {
     onUpload(URL.createObjectURL(e.target.files[0]));
@@ -8,12 +8,13 @@ function ImgUpload({ onUpload, currImg }) {
 
   return (
     <div>
-      <div>
-        <img src={currImg} />
-      </div>
-      <div>
-        <input type="file" onChange={handleChange} />
-      </div>
+      <label htmlFor={name}>{name}</label>
+      <input 
+        id={name}
+        type="file" 
+        onChange={handleChange} 
+        required={isRequired}
+      />
     </div>
   )
 };
