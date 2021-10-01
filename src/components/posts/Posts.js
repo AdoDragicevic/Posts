@@ -10,18 +10,18 @@ import classes from "./Posts.module.css";
 
 function Posts({ posts, setPosts }) {
   
-  const [currMode, setCurrMode] = useState("new");
-  const [currPost, setCurrPost] = useState(null);
+  const [isListAll, toggleIsListAll] = useToggleState(false);
+  const [currPost, setCurrPost] = useState(null); 
 
   const showCurrContent = () => {
     if (currPost) return <Show {...currPost} />;
-    if (currMode === "new") return <New setPosts={setPosts} />;
-    return <List posts={posts} openPost={setCurrPost} />;
+    if (isListAll) return <List posts={posts} openPost={setCurrPost} />;
+    return <New setPosts={setPosts} />;
   };
 
   return (
     <>
-      <Nav title="Posts" currMode={currMode} setCurrMode={setCurrMode} />
+      <Nav title="Posts" isListAll={isListAll} toggle={toggleIsListAll} />
       <div className={classes.container}>
         {showCurrContent()}
       </div>
