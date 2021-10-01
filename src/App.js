@@ -1,9 +1,11 @@
+import Posts from "./posts/Posts";
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      
+      <Posts />
     </div>
   );
 }
