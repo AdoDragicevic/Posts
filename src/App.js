@@ -2,22 +2,9 @@ import useLocalStorageState from "./hooks/useLocalStorageState";
 
 import Posts from "./components/posts/Posts";
 
-import './App.css';
+import seedData from "./seedData";
 
-const seedData = [
-  {
-    name: "Solid Snake",
-    address: "Metal Gear Solid",
-    description: "Clone of Big Boss",
-    img: ""
-  },
-  {
-    name: "Vegeta",
-    address: "Dragon Ball Z",
-    description: "Bad ass m*** f***",
-    img: ""
-  }
-];
+import './App.css';
 
 function App() {
   const [posts, setPosts] = useLocalStorageState("posts", seedData);

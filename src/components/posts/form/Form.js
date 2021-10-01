@@ -9,11 +9,11 @@ import classes from "./Form.module.css";
 
 function Form({ submit }) {
 
+  const [img, setImg] = useState("");
+
   const name = useRef();
   const address = useRef();
   const description = useRef();
-
-  const [img, setImg] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();

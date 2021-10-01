@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function ImgUpload({ onUpload, currImg }) {
 
   const handleChange = e => {
