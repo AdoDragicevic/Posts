@@ -1,5 +1,8 @@
 import { useRef } from "react";
 
+import Input from "./Input";
+import Textarea from "./Textarea";
+
 import classes from "./Form.module.css";
 
 
@@ -11,23 +14,22 @@ function Form({ submit }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const name = name.current.value;
-    const address = address.current.value;
-    const description = description.current.value;
-    submit({ name, address, description });
+    const inputData = {
+      name: name.current.value,
+      address: address.current.value,
+      description: description.current.value
+    }; 
+    submit(inputData);
   };
 
   return (
     <form onSubmit={handleSubmit}>
+
+      <Input type="text" reference={name} name="name" isRequired />
       
-      <label htmlFor="name">Name</label>
-      <input id="name" type="text" name="name" ref={name} required></input>
+      <Input type="text" reference={address} name="address" isRequired />
       
-      <label htmlFor="addess">Address</label>
-      <input id="addess" type="text" name="address" ref={address} required></input>
-      
-      <label htmlFor="description">description</label>
-      <textarea id="description" name="description" ref={description} required></textarea>
+      <Textarea name="description" reference={description} isRequired />
       
       <button type="submit">Submit</button>
 
