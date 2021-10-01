@@ -1,7 +1,9 @@
 import classes from "./New.module.css";
 
-function New() {
-  return <p>New!</p>
+import Form from "../form/Form";
+
+function New({ setPosts }) {
+  return <Form />;
 };
 
 export default New;

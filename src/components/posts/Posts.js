@@ -4,20 +4,19 @@ import Nav from "../UI/nav/Nav";
 import List from "./list/List";
 import New from "./new/New";
 import Show from "./show/Show";
-import UploadImg from "./UploadImg";
 
 import classes from "./Posts.module.css";
 
 
 function Posts(props) {
   
-  const [currMode, setCurrMode] = useState("list");
+  const [currMode, setCurrMode] = useState("new");
   const [currPost, setCurrPost] = useState(null);
 
   const showCurrContent = () => {
     switch(currMode) {
       case "list":
-        return <List posts={props.posts} open={setCurrPost} />;
+        return <List posts={props.posts} openPost={setCurrPost} />;
       case "new":
         return <New setPosts={props.setPosts} />
       case "show":
@@ -33,7 +32,6 @@ function Posts(props) {
       <div className={classes.container}>
         {showCurrContent()}
       </div>
-      <UploadImg />
     </>
   );
 };
