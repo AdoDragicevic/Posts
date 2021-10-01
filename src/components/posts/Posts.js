@@ -11,26 +11,31 @@ import classes from "./Posts.module.css";
 function Posts({ posts, setPosts }) {
   
   const [content, setContent] = useState("new");
-  const [openedPost, setOpenedPost] = useState(null);
+  const [showPost, setShowPost] = useState(null);
 
-  const addPost = newPost => {
+  const add = newPost => {
     setPosts([newPost, ...posts]);
   };
   
-  const showPost = id => {
+  const show = id => {
     const post = posts.find(p => p.id === id);
-    setOpenedPost(post);
+    setShowPost(post);
     setContent("show");
+  };
+
+  const exitShow = () => {
+    setShowPost(null);
+    setContent("list");
   };
 
   const renderContent = () => {
     switch(content) {
       case "new":
-        return <New addPost={addPost} setContent={setContent} />;
+        return <New add={add} setContent={setContent} />;
       case "list":
-        return <List showPost={showPost} posts={posts} />
+        return <List show={show} posts={posts} />
       case "show":
-        return <Show {...showPost} />;
+        return <Show {...showPost} exit={exitShow} />;
       default:
         return null;
     }
@@ -38,7 +43,7 @@ function Posts({ posts, setPosts }) {
 
   return (
     <>
-      <Nav />
+      <Nav  />
       <div className={classes.container}>
         {renderContent()}
       </div>
