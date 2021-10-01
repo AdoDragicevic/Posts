@@ -1,7 +1,6 @@
 import { useState } from "react/cjs/react.development";
-import useToggleState from "../../hooks/useToggleState";
 
-import Nav from "../UI/nav/Nav";
+import Nav from "./nav/Nav";
 import List from "./list/List";
 import New from "./new/New";
 import Show from "./show/Show";
