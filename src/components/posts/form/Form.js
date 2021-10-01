@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import { uuid } from "uuidv4";
+import uuid from "react-uuid";
 
 import classes from "./Form.module.css";
 
