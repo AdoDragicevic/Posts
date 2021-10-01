@@ -13,6 +13,7 @@ function ImgUpload({ name, onUpload, isRequired }) {
         onChange={handleChange} 
         required={isRequired}
       />
+      <button>Delete img</button>
     </div>
   )
 };
