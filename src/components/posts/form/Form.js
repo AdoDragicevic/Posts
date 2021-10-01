@@ -1,31 +1,20 @@
 import { useRef } from "react";
 
-import uuid from "react-uuid";
-
 import classes from "./Form.module.css";
 
 
 function Form({ submit }) {
 
-  console.log(uuid());
-
   const name = useRef();
   const address = useRef();
   const description = useRef();
 
-  const generateNewPost = () => {
-    return {
-      name: name.current.value,
-      address: address.current.value,
-      description: description.current.value,
-      id: uuid()
-    }
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
-    const newPost = generateNewPost();
-    submit(newPost);
+    const name = name.current.value;
+    const address = address.current.value;
+    const description = description.current.value;
+    submit({ name, address, description });
   };
 
   return (
