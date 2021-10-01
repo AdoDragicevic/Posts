@@ -5,24 +5,34 @@ import classes from "./Form.module.css";
 
 function Form(props) {
 
+  const nameInput = useRef();
+  const addressInput = useRef();
+  const descriptionTextarea = useRef();
+
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e);
+    const post = {
+      name: nameInput.current.value,
+      address: addressInput.current.value,
+      description: descriptionTextarea.current.value
+    };
+    props.submit(post);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       
       <label htmlFor="name">Name</label>
-      <input id="name" type="text" name="name" required></input>
+      <input id="name" type="text" name="name" ref={nameInput} required></input>
       
       <label htmlFor="addess">Address</label>
-      <input id="addess" type="text" name="address" required></input>
+      <input id="addess" type="text" name="address" ref={addressInput} required></input>
       
       <label htmlFor="description">description</label>
-      <textarea id="description" name="description" required></textarea>
+      <textarea id="description" name="description" ref={descriptionTextarea} required></textarea>
       
       <button type="submit">Submit</button>
+
     </form>
   );
 };
