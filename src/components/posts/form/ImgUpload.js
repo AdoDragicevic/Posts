@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function ImgUpload({ name, onUpload, isRequired }) {
 
   const handleChange = e => {

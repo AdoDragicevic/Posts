@@ -36,7 +36,7 @@ function Posts({ posts, setPosts }) {
       case "list":
         return <List show={show} posts={posts} />
       case "show":
-        return <Show {...showPost} exit={exitShow} />;
+        return <Show {...showPost} />;
       default:
         return null;
     }

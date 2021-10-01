@@ -37,7 +37,7 @@ function Form({ submit }) {
       <Textarea name="description" reference={description} isRequired />
       <div>
         <img src={img} />
-        <ImgUpload onUpload={handleImgUpload} name="image" />
+        <ImgUpload onUpload={handleImgUpload} name="image" isRequired />
       </div>
       <button type="submit">Submit</button>
     </form>

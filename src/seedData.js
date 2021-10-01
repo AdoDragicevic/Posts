@@ -3,13 +3,15 @@ const seedData = [
     name: "Solid Snake",
     address: "Metal Gear Solid",
     description: "Clone of Big Boss",
-    img: ""
+    img: "",
+    id: "1"
   },
   {
     name: "Vegeta",
     address: "Dragon Ball Z",
     description: "Bad ass m*** f***",
-    img: ""
+    img: "",
+    id: "2"
   }
 ];
 
