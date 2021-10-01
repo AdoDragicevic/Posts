@@ -1,6 +1,7 @@
 import { useState } from "react/cjs/react.development";
 
 import Nav from "./nav/Nav";
+import Container from "../layout/Container";
 import List from "./list/List";
 import New from "./new/New";
 import Show from "./show/Show";
@@ -24,7 +25,6 @@ function Posts({ posts, setPosts }) {
   };
 
   const exitShow = () => {
-    setShowPost(null);
     setContent("list");
   };
 
@@ -43,10 +43,10 @@ function Posts({ posts, setPosts }) {
 
   return (
     <>
-      <Nav  />
-      <div className={classes.container}>
+      <Nav content={content} setContent={setContent} />
+      <Container>
         {renderContent()}
-      </div>
+      </Container>
     </>
   );
 
