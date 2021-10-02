@@ -16,8 +16,20 @@ function Show({ title, author, address, description, img, date, id, remove, edit
       <p>{description}</p>
       <p>{date}</p>
       <img scr={img} />
-      <Button onClick={handleEdit}>Edit</Button>
-      <Button onClick={handleDelete}>Delete</Button>
+      <Button 
+        size="small"
+        color="alert"
+        onClick={handleEdit}
+      >
+        Edit
+      </Button>
+      <Button 
+        size="small"
+        color="danger"
+        onClick={handleDelete}
+      >
+        Delete
+      </Button>
     </div>
   )
 };

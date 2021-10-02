@@ -24,14 +24,21 @@
   border: none;
   border-bottom: 1px solid #227C9D;
   margin: .5rem 0 1.5rem 0;
+  transition: all .2s ease-in;
 }
 
 .input:focus {
-  border: 3px solid #227C9D;
+  border: 2px solid #227C9D;
+  
+}
+
+.input:focus::placeholder {
+  opacity: 0;
 }
 
 .input::placeholder {
   font-size: .6em;
   font-weight: 100;
   color: #227C9D;
+  transition: all .5s ease;
 }

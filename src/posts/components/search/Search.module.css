@@ -16,6 +16,10 @@
   transition: all .5s ease;
 }
 
+.btn:hover {
+  letter-spacing: .4px;
+}
+
 @media screen and (max-width: 920px) {
   .btn {
     transform: translatex(0);
@@ -32,7 +36,7 @@
   text-align: center;
   width: 100%;
   border: none;
-  border-bottom: 2px solid #53917E;
+  border-bottom: 2px solid #3C91E6;
   background-color: transparent;
   margin: .5rem 0 5rem 0;
   outline: none;
@@ -41,5 +45,5 @@
 
 .input:focus {
   color: black;
-  border-bottom-color: #3C91E6;
+  border-bottom-color: #53917E;
 }
