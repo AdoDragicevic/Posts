@@ -9,9 +9,10 @@ function Search({ posts }) {
   
   const handleInputChange = e => searchTerm(e.target.value);
 
-  const search = () => (
-    isSearchByTitle ? findByTitle(posts, searchTerm) : findByAuthor(posts, searchTerm)
-  );
+  const search = () => {
+    const key = isSearchByTitle ? "name" : "author";
+    return findBy(posts, searchTerm, key);
+  };
   
   return (
     <div className={classes.root}>

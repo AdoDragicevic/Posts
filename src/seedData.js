@@ -1,6 +1,7 @@
 const seedData = [
   {
-    name: "Solid Snake",
+    name: "Why I'm the Big Boss",
+    autor: "Solid snake",
     address: "Metal Gear Solid",
     description: "Clone of Big Boss",
     img: "",
@@ -8,7 +9,8 @@ const seedData = [
     date: "22.09.2021"
   },
   {
-    name: "Vegeta",
+    name: "What when you have all 7 dragon balls",
+    author: "Vegeta",
     address: "Dragon Ball Z",
     description: "Bad ass m*** f***",
     img: "",
