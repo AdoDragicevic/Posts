@@ -1,0 +1,39 @@
+.root {
+  background-color: black;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #d8d5d5;
+  padding: 0 5vw;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 50px;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  width: 150px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .2s ease-in;
+}
+
+.btn:hover {
+  transform: translateX(1px);
+}
+
+.btn:active {
+  transform: translateX(-2px);
+}

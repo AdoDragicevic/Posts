@@ -20,8 +20,8 @@ function Nav({ content, setContent }) {
 
   return (
     <nav className={classes.root}>
-      <div className={classes.title}>Posts</div>
-      <button onClick={handleClick}> {getBtnTxt()} </button>
+      <h1 className={classes.title}>Posts</h1>
+      <button className={classes.btn} onClick={handleClick}> {getBtnTxt()} </button>
     </nav>
   )
 };
