@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useInputState from "../../../hooks/useInputState";
 import useIncrementState from "../../../hooks/useIncrementState";
 
@@ -10,14 +9,14 @@ import ThirdForm from "../forms/thirdForm/ThirdForm";
 
 import classes from "./FormsContainer.module.css";
 
-function FormsContainer({ header, submit }) {
+function FormsContainer({ header, title, author, address, description, submit, img }) {
   
   const [formPage, incrementFormPage, decrementFormPage] = useIncrementState();
 
-  const [title, updateTitle] = useInputState();
-  const [author, updateAuthor] = useInputState();
-  const [description, updateDescription] = useInputState();
-  const [address, updateAddress] = useInputState();
+  const [titleInput, updateTitle] = useInputState(title || "");
+  const [authorInput, updateAuthor] = useInputState(author || "");
+  const [addressInput, updateAddress] = useInputState(address || "");
+  const [descriptionTxt, updateDescription] = useInputState(description || "");
 
   const goToPreviousFormPage = () => {
     decrementFormPage();
@@ -31,17 +30,23 @@ function FormsContainer({ header, submit }) {
   const submitForm = e => {
     console.log(description);
     e.preventDefault();
-    const inputVals = { title, author, description, address, img: ""};
+    const inputVals = { 
+      title: titleInput, 
+      author: authorInput, 
+      address: addressInput, 
+      description: descriptionTxt, 
+      img: ""
+    };
     submit(inputVals);
   };
 
   const formPages = [
     <FirstForm 
-      title={title}
+      title={titleInput}
       updateTitle={updateTitle}
-      author={author}
+      author={authorInput}
       updateAuthor={updateAuthor}
-      address={address}
+      address={addressInput}
       updateAddress={updateAddress}
       submit={goToNextFormPage}
     />,
@@ -51,7 +56,7 @@ function FormsContainer({ header, submit }) {
       submit={goToNextFormPage}
     />,
     <ThirdForm 
-      description={description} 
+      description={descriptionTxt} 
       updateDescription={updateDescription}
       goBack={goToPreviousFormPage} 
       submit={submitForm} 

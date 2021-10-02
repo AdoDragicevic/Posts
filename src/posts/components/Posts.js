@@ -27,20 +27,21 @@ function Posts({ posts, setPosts }) {
   };
 
   const edit = id => {
-    setContent("edit");
     const p = posts.find(post => post.id === id);
     setShowPost(p);
+    setContent("edit");
   };
 
   const remove = id => {
     const p = posts.filter(post => post.id !== id);
-    setContent("list");
     setPosts(p);
+    setContent("list");
   };
 
   const update = (id, newPost) => {
     const p = posts.map(post => post.id === id ? newPost : post);
     setPosts(p);
+    setContent("list");
   };
 
   const renderContent = () => {
