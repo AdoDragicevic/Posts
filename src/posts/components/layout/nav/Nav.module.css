@@ -15,29 +15,3 @@
   font-size: 18px;
   line-height: 50px;
 }
-
-.btn {
-  outline: none;
-  border: none;
-  border-radius: 15px;
-  height: 30px;
-  width: 150px;
-  font-family: inherit;
-  text-transform: uppercase;
-  font-size: 18px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all .2s ease-in;
-  background-color: #3C91E6;
-  color: inherit;
-}
-
-.btn:hover {
-  transform: translateX(1px);
-  /*background-color: #DA4167; */
-  background-color: #227C9D;
-}
-
-.btn:active {
-  transform: translateX(-2px);
-}

@@ -23,7 +23,9 @@ function Nav({ content, setContent }) {
   return (
     <nav className={classes.root}>
       <h1 className={classes.title}>Posts</h1>
-      <Button onClick={handleClick}>{getBtnTxt()}</Button>
+      <Button onClick={handleClick}>
+        {getBtnTxt()}
+      </Button>
     </nav>
   )
 };
