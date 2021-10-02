@@ -9,8 +9,12 @@ import classes from "./New.module.css";
 function New({ add }) {
 
   const submit = inputData => {
-    inputData.id = uuid();
-    add(inputData);
+    const newInput = {
+      ...inputData,
+      id: uuid(),
+      date: getDateStr()
+    };
+    add(newInput);
   };
 
   return (
