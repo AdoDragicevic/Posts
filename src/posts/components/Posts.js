@@ -62,7 +62,9 @@ function Posts({ posts, setPosts }) {
   return (
     <div className={classes.root}>
       <Nav content={content} setContent={setContent} />
-      <Container> {renderContent()} </Container>
+      <div className={classes.container}>
+        {renderContent()}
+      </div>
     </div>
   );
 

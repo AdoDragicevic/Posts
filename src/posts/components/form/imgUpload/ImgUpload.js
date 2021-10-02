@@ -9,7 +9,7 @@ function ImgUpload({ name, onUpload, isRequired }) {
       <label htmlFor={name}>{name}</label>
       <input 
         id={name}
-        type="file" 
+        type="file"
         onChange={handleChange} 
         required={isRequired}
       />

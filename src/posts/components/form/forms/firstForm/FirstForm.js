@@ -13,7 +13,7 @@ function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAd
           onChange={updateTitle}
           name="title" 
           placeholder="My first post"
-          isRequired 
+          isRequired={false}
         />
         <Input 
           type="text" 
@@ -21,15 +21,15 @@ function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAd
           onChange={updateAuthor}
           name="author"
           placeholder="John Smith"
-          isRequired 
+          isRequired={false}
         />
         <Input 
-          type="text" 
+          type="email" 
           value={address}
           onChange={updateAddress}
           name="address"
           placeholder="john.smith@matrix.com"
-          isRequired 
+          isRequired={false}
         />
       </div>
       <Button type="submit" size="large" color="secondary">
