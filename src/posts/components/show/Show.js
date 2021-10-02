@@ -1,5 +1,3 @@
-import { getDateFormat } from "../../helpers/helper";
-
 import classes from "./Show.module.css";
 
 function Show({ name, address, description, img, date, id, remove, edit }) {  
@@ -12,7 +10,7 @@ function Show({ name, address, description, img, date, id, remove, edit }) {
       <p>{name}</p>
       <p>{address}</p>
       <p>{description}</p>
-      <p>{getDateFormat(date)}</p>
+      <p>{date}</p>
       <img scr={img} />
       <button onClick={handleEdit}>Edit</button>
       <button onClick={handleDelete}>Delete</button>
