@@ -15,7 +15,7 @@ function ThirdForm({ description, updateDescription, goBack, submit }) {
         onChange={updateDescription}
         isRequired 
       />
-      <div onClick={goBack}>Go back</div>
+      <div onClick={goBack}>&#8592;</div>
       <Button type="submit">
         Submit
       </Button>

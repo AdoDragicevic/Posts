@@ -6,7 +6,7 @@ function SecondForm({ img, goBack, submit }) {
     <form onSubmit={submit}>
       <img src={img} />
       <ImgUpload name="image" />
-      <div onClick={goBack}>Go back</div>
+      <div onClick={goBack}>&#8592;</div>
       <Button type="submit">
         Next 3/3
       </Button>
