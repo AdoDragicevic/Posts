@@ -4,6 +4,7 @@
 
 .btn {
   float: right;
+  margin-top: 2rem;
 }
 
 .input {
@@ -17,7 +18,7 @@
   border: none;
   border-bottom: 2px solid #53917E;
   background-color: transparent;
-  margin: .5rem 0 3rem 0;
+  margin: .5rem 0 4rem 0;
   outline: none;
   transition: all .4s ease;
 }

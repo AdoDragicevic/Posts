@@ -1,8 +1,8 @@
 import useInputState from "../../../hooks/useInputState";
 import useIncrementState from "../../../hooks/useIncrementState";
 
-import Card from "../../layout/card/Card";
 import Header from "../../UI/header/Header";
+import Container from "../../layout/container/Container";
 import FirstForm from "../forms/firstForm/FirstForm";
 import SecondForm from "../forms/secondForm/SecondForm";
 import ThirdForm from "../forms/thirdForm/ThirdForm";
@@ -64,10 +64,12 @@ function FormsContainer({ header, title, author, address, description, submit, i
   ];
 
   return (
-    <Card>
+    <>
       <Header> {header} </Header>
-      {formPages[formPage]}
-    </Card>
+      <div className={classes.container}>
+        {formPages[formPage]}
+      </div>
+    </>
   )
 
 };

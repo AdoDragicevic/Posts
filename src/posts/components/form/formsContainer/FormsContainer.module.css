@@ -1,0 +1,11 @@
+.root {
+  width: 90%;
+  margin: 0 auto;
+  
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: 3.5rem auto;
+}
