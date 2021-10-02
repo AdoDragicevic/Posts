@@ -13,15 +13,18 @@ function Search({ posts, show }) {
   const handleInputChange = e => setSearchTerm(e.target.value);
 
   const search = () => {
-    const key = isSearchByTitle ? "name" : "author";
+    const key = isSearchByTitle ? "title" : "author";
     return findBy(posts, searchTerm, key);
   };
   
   return (
     <div className={classes.root}>
+      <button onClick={toggleIsSearchByTitle}>
+        {`Search ${isSearchByTitle ? "author" : "title"}`}
+      </button>
       <input 
         type="text" 
-        placeholder={`${isSearchByTitle ? "Search by post name" : "Search by author"}`} 
+        placeholder={`${isSearchByTitle ? "Search by post title" : "Search by author"}`} 
         onChange={handleInputChange} 
       />
       <List posts={search()} show={show} />

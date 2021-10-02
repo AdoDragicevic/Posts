@@ -1,10 +1,10 @@
 import classes from "./ListItem.module.css";
 
-function ListItem({ img, name, address, id, show }) {
+function ListItem({ img, title, address, id, show }) {
   return (
     <li onClick={ () => show(id) }>
       <img src={img} />
-      <h4>{name}</h4>
+      <h4>{title}</h4>
       <p>{address}</p>
     </li>
   )
