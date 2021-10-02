@@ -2,7 +2,7 @@ import { useState } from "react/cjs/react.development";
 
 import Nav from "./layout/nav/Nav";
 import Container from "./layout/container/Container";
-import List from "./list/List";
+import Search from "./search/Search";
 import New from "./new/New";
 import Edit from "./edit/Edit";
 import Show from "./show/Show";
@@ -48,7 +48,7 @@ function Posts({ posts, setPosts }) {
       case "new":
         return <New add={add} setContent={setContent} />;
       case "list":
-        return <List show={show} posts={posts} />
+        return <Search show={show} posts={posts} />
       case "show":
         return <Show {...showPost} remove={remove} edit={edit} />;
       case "edit":

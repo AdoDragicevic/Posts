@@ -5,7 +5,7 @@ const seedData = [
     description: "Clone of Big Boss",
     img: "",
     id: "1",
-    date: new Date()
+    date: "22.09.2021"
   },
   {
     name: "Vegeta",
@@ -13,7 +13,7 @@ const seedData = [
     description: "Bad ass m*** f***",
     img: "",
     id: "2",
-    date: new Date()
+    date: "01.10.2021."
   }
 ];
 
