@@ -2,7 +2,7 @@ import { findBy } from "../../helpers/search";
 import { useState } from "react";
 import useToggleState from "../../hooks/useToggleState";
 
-import Input from "../form/input/Input.js";
+import List from "../list/List";
 
 import classes from "./Search.module.css";
 
@@ -19,7 +19,8 @@ function Search({ posts }) {
   
   return (
     <div className={classes.root}>
-      <Input type="text" name="search" onChange={handleInputChange} />
+    
+      
       <List posts={search()} />
     </div>
   )
