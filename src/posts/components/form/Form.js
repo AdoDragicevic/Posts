@@ -4,6 +4,7 @@ import useResetState from "../../hooks/useResetState";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import ImgUpload from "./ImgUpload";
+import Button from "../UI/button/Button";
 
 import classes from "./Form.module.css";
 
@@ -37,7 +38,7 @@ function Form({ submit }) {
       <Input type="text" reference={name} name="name" isRequired />
       <Input type="text" reference={address} name="address" isRequired />
       <Textarea name="description" reference={description} isRequired />
-      <button type="submit">Submit</button>
+      <Button>Submit</Button>
     </form>
   );
 };

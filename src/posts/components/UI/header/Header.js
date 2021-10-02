@@ -1,9 +1,8 @@
 import classes from "./Header.module.css";
 
 function Header(props) {
-  console.log(props.styles);
   return (
-    <h1 className={classes.root} style={props.styles}>
+    <h1 className={classes.root} style={props.styles} onClick={props.onClick}>
       {props.children}
     </h1>
   )

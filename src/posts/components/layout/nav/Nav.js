@@ -5,9 +5,13 @@ import classes from "./Nav.module.css";
 
 function Nav({ content, setContent }) {
 
-  const handleClick = () => {
+  const handleBtnClick = () => {
     const nextContent = content === "list" ? "new" : "list";
     setContent(nextContent);
+  };
+
+  const handleHeaderClick = () => {
+    setContent("list");
   };
 
   const getBtnTxt = () => {
@@ -23,10 +27,10 @@ function Nav({ content, setContent }) {
 
   return (
     <nav className={classes.root}>
-      <Header styles={{ fontSize: "18px" }}>
+      <Header onClick={handleHeaderClick} styles={{ fontSize: "18px" }}>
         Posts
       </Header>
-      <Button onClick={handleClick}>
+      <Button onClick={handleBtnClick}>
         {getBtnTxt()}
       </Button>
     </nav>
