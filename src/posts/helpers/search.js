@@ -1,7 +1,10 @@
 export const findBy = (data, searchTerm, key) => {
+  if (searchTerm === "") return data;
   const found = [];
+  const query = searchTerm.toLowercase();
   data.forEach(el => {
-    if (el[key] )
+    const str = el[key].toLowercase();
+    if (str.includes(query)) found.push(el);
   });
   return found;
 };

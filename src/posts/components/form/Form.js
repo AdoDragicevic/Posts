@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import useResetState from "../../hooks/useResetState";
 
-import Input from "./Input";
-import Textarea from "./Textarea";
-import ImgUpload from "./ImgUpload";
+import Input from "./input/Input";
+import Textarea from "./textarea/Textarea";
+import ImgUpload from "./imgUpload/ImgUpload";
 import Button from "../UI/button/Button";
 
 import classes from "./Form.module.css";
@@ -14,6 +14,7 @@ function Form({ submit }) {
   const [img, setImg, resetImg] = useResetState("");
 
   const name = useRef();
+  const author = useRef();
   const address = useRef();
   const description = useRef();
 
@@ -23,6 +24,7 @@ function Form({ submit }) {
     e.preventDefault();
     const inputData = {
       name: name.current.value,
+      author: author.current.value,
       address: address.current.value,
       description: description.current.value,
       img
@@ -35,6 +37,7 @@ function Form({ submit }) {
       <img src={img} />
       <ImgUpload name="image" isRequired />
       <Input type="text" reference={name} name="name" isRequired />
+      <Input type="text" reference={author} name="author" isRequired />
       <Input type="text" reference={address} name="address" isRequired />
       <Textarea name="description" reference={description} isRequired />
       <Button>Submit</Button>

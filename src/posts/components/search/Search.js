@@ -1,6 +1,9 @@
-import { findByTitle, findByAuthor } from "../../helpers/helper";
+import { findBy } from "../../helpers/search";
 import { useState } from "react";
 import useToggleState from "../../hooks/useToggleState";
+
+import Input from "../form/input/Input.js";
+
 import classes from "./Search.module.css";
 
 function Search({ posts }) {

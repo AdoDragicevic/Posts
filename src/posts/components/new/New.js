@@ -4,7 +4,7 @@ import Form from "../form/Form";
 import Card from "../layout/card/Card";
 import Header from "../UI/header/Header";
 
-import { getDateStr } from "../../helpers/helper";
+import { getDateStr } from "../../helpers/date";
 
 import classes from "./New.module.css";
 
