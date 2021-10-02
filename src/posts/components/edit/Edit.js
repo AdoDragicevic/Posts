@@ -17,7 +17,7 @@ function Edit({ update, id, title, author, address, description, img }) {
 
   return (
     <FormsContainer 
-      header="Add new post" 
+      header="Edit post" 
       title={title}
       author={author}
       address={address}
