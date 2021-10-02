@@ -9,38 +9,40 @@ function Show({ title, author, address, description, img, date, id, remove, edit
   const handleEdit = () => edit(id);
 
   return (
-    <div>
+    <>
       <Header>{title}</Header>
-      <h4> <em style={{ fontWeight: 100 }}>by</em> {author}</h4>
+      <h4 className={classes.subtitle}> 
+        <em> by </em> {author}
+      </h4>
       <div className={classes.container}>
-        <div className={classes.metadata}>
-          <a className={classes.link} href ={`mailto: ${address}`}>{address}</a>
-          <span>{date}</span>
-        </div>
-        <div className={classes.btns}>
-          <Button 
-              size="small"
-              color="alert"
-              onClick={handleEdit}
-            >
-              Edit
-            </Button>
+        <img scr={img} />
+        <div className={classes.box}> 
+          <div className={classes.metadata}>
+            <a className={classes.link} href ={`mailto: ${address}`}>{address}</a>
+            <span>{date}</span>
+          </div>
+          <div className={classes.btns}>
             <Button 
-              size="small"
-              color="danger"
-              onClick={handleDelete}
-            >
-              Delete
-          </Button>
+                size="small"
+                color="alert"
+                onClick={handleEdit}
+              >
+                Edit
+              </Button>
+              <Button 
+                size="small"
+                color="danger"
+                onClick={handleDelete}
+              >
+                Delete
+            </Button>
+          </div>
+        </div>
+        <div className={classes.content}>
+          {description}
         </div>
       </div>
-      
-      <div className={classes.content}>
-        {description}
-      </div>
-      <img scr={img} />
-      
-    </div>
+    </>
   )
 };
 
