@@ -4,6 +4,7 @@ import Nav from "./layout/nav/Nav";
 import Container from "./layout/container/Container";
 import List from "./list/List";
 import New from "./new/New";
+import Edit from "./edit/Edit";
 import Show from "./show/Show";
 
 import classes from "./Posts.module.css";
@@ -19,20 +20,27 @@ function Posts({ posts, setPosts }) {
     setContent("list");
   };
 
-  const remove = id => {
-    const p = posts.filter(post => post.id !== id);
-    setContent("list");
-    setPosts(p);
-  };
-  
   const show = id => {
     const post = posts.find(p => p.id === id);
     setShowPost(post);
     setContent("show");
   };
 
-  const exitShow = () => {
+  const edit = id => {
+    setContent("edit");
+    const p = posts.find(post => post.id === id);
+    setShowPost(p);
+  };
+
+  const remove = id => {
+    const p = posts.filter(post => post.id !== id);
     setContent("list");
+    setPosts(p);
+  };
+
+  const update = (id, newPost) => {
+    const p = posts.map(post => post.id === id ? newPost : post);
+    setPosts(p);
   };
 
   const renderContent = () => {
@@ -42,7 +50,9 @@ function Posts({ posts, setPosts }) {
       case "list":
         return <List show={show} posts={posts} />
       case "show":
-        return <Show {...showPost} remove={remove} />;
+        return <Show {...showPost} remove={remove} edit={edit} />;
+      case "edit":
+        return <Edit {...showPost} update={update} />
       default:
         return null;
     }
