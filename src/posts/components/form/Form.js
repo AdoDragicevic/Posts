@@ -31,7 +31,7 @@ function Form({ submit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={classes.root} onSubmit={handleSubmit}>
       <img src={img} />
       <Input type="text" reference={name} name="name" isRequired />
       <Input type="text" reference={address} name="address" isRequired />

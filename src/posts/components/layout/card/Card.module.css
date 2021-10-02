@@ -1,0 +1,8 @@
+.root {
+  border: 3px solid #eee;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 600px;
+  margin: 5vh auto;
+  background-color: #F1F1F1;
+}
