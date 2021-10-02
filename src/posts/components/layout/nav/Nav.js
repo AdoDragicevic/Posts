@@ -1,3 +1,5 @@
+import Button from "../../UI/button/Button";
+
 import classes from "./Nav.module.css";
 
 function Nav({ content, setContent }) {
@@ -21,7 +23,7 @@ function Nav({ content, setContent }) {
   return (
     <nav className={classes.root}>
       <h1 className={classes.title}>Posts</h1>
-      <button className={classes.btn} onClick={handleClick}> {getBtnTxt()} </button>
+      <Button onClick={handleClick}>{getBtnTxt()}</Button>
     </nav>
   )
 };

@@ -33,10 +33,10 @@ function Form({ submit }) {
   return (
     <form className={classes.root} onSubmit={handleSubmit}>
       <img src={img} />
+      <ImgUpload name="image" isRequired />
       <Input type="text" reference={name} name="name" isRequired />
       <Input type="text" reference={address} name="address" isRequired />
       <Textarea name="description" reference={description} isRequired />
-      <ImgUpload name="image" isRequired />
       <button type="submit">Submit</button>
     </form>
   );
