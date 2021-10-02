@@ -2,6 +2,7 @@ import { findBy } from "../../helpers/search";
 import { useState } from "react";
 import useToggleState from "../../hooks/useToggleState";
 
+import Header from "../UI/header/Header";
 import List from "../list/List";
 
 import classes from "./Search.module.css";
@@ -19,12 +20,14 @@ function Search({ posts, show }) {
   
   return (
     <div className={classes.root}>
-      <button onClick={toggleIsSearchByTitle}>
-        {`Search ${isSearchByTitle ? "author" : "title"}`}
+      <Header>Posts</Header>
+      <button className={classes.btn} onClick={toggleIsSearchByTitle}>
+        {`Searching by ${isSearchByTitle ? "title" : "author"}`}
       </button>
-      <input 
+      <input
+        className={classes.input}
         type="text" 
-        placeholder={`${isSearchByTitle ? "Search by post title" : "Search by author"}`} 
+        placeholder="Search..." 
         onChange={handleInputChange} 
       />
       <List posts={search()} show={show} />

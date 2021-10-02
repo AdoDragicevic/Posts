@@ -1,0 +1,28 @@
+.root {
+  
+}
+
+.btn {
+  float: right;
+}
+
+.input {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  font-size: 1.4rem;
+  font-weight: 100;
+  text-align: center;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #53917E;
+  background-color: transparent;
+  margin: .5rem 0 3rem 0;
+  outline: none;
+  transition: all .4s ease;
+}
+
+.input:focus {
+  color: black;
+  border-bottom-color: #3C91E6;
+}
