@@ -18,6 +18,12 @@ function Posts({ posts, setPosts }) {
     setPosts([newPost, ...posts]);
     setContent("list");
   };
+
+  const remove = id => {
+    const p = posts.filter(post => post.id !== id);
+    setContent("list");
+    setPosts(p);
+  };
   
   const show = id => {
     const post = posts.find(p => p.id === id);
@@ -36,7 +42,7 @@ function Posts({ posts, setPosts }) {
       case "list":
         return <List show={show} posts={posts} />
       case "show":
-        return <Show {...showPost} />;
+        return <Show {...showPost} remove={remove} />;
       default:
         return null;
     }

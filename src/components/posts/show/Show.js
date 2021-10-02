@@ -2,7 +2,10 @@ import { getDateFormat } from "../../../helper/helper";
 
 import classes from "./Show.module.css";
 
-function Show({ name, address, description, img, date }) {  
+function Show({ name, address, description, img, date, id, remove }) {  
+  
+  const handleDelete = () => remove(id);
+  
   return (
     <div>
       <p>{name}</p>
@@ -10,6 +13,7 @@ function Show({ name, address, description, img, date }) {
       <p>{description}</p>
       <p>{getDateFormat(date)}</p>
       <img scr={img} />
+      <button onClick={handleDelete}>Delete</button>
     </div>
   )
 };
