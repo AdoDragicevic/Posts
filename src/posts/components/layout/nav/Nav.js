@@ -1,4 +1,5 @@
 import Button from "../../UI/button/Button";
+import Header from "../../UI/header/Header";
 
 import classes from "./Nav.module.css";
 
@@ -22,7 +23,9 @@ function Nav({ content, setContent }) {
 
   return (
     <nav className={classes.root}>
-      <h1 className={classes.title}>Posts</h1>
+      <Header styles={{ fontSize: "18px" }}>
+        Posts
+      </Header>
       <Button onClick={handleClick}>
         {getBtnTxt()}
       </Button>

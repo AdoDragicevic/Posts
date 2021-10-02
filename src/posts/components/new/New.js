@@ -2,6 +2,7 @@ import uuid from "react-uuid";
 
 import Form from "../form/Form";
 import Card from "../layout/card/Card";
+import Header from "../UI/header/Header";
 
 import classes from "./New.module.css";
 
@@ -14,7 +15,7 @@ function New({ add }) {
 
   return (
     <Card>
-      <h1 className={classes.title}>Add new post</h1>
+      <Header>Add new post</Header>
       <Form submit={submit} />
     </Card>
   )
