@@ -10,14 +10,14 @@
   letter-spacing: 1px;
   cursor: pointer;
   transition: all .2s ease-in;
-  background-color: #3C91E6;
+  background-color: #227C9D;
   color: #d8d5d5;
 }
 
 .btn:hover {
   transform: translateX(1px);
   /*background-color: #DA4167; */
-  background-color: #227C9D;
+  background-color: #3C91E6;
 }
 
 .btn:active {

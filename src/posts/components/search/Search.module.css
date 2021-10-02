@@ -1,10 +1,26 @@
 .root {
-  
+  margin-bottom: 2rem;
 }
 
 .btn {
   float: right;
-  margin-top: 2rem;
+  font-family: inherit;
+  margin-top: 1rem;
+  transform: translateY(43px);
+  border: 1px solid rgba(233, 233, 233, .3);
+  background-color:  rgba(233, 233, 233, .7);
+  height: 45px;
+  padding: 0 5px;
+  width: 150px;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+@media screen and (max-width: 920px) {
+  .btn {
+    transform: translatex(0);
+    height: 35px;
+  }
 }
 
 .input {
@@ -18,7 +34,7 @@
   border: none;
   border-bottom: 2px solid #53917E;
   background-color: transparent;
-  margin: .5rem 0 4rem 0;
+  margin: .5rem 0 5rem 0;
   outline: none;
   transition: all .4s ease;
 }
