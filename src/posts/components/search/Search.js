@@ -6,11 +6,11 @@ import List from "../list/List";
 
 import classes from "./Search.module.css";
 
-function Search({ posts }) {
+function Search({ posts, show }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearchByTitle, toggleIsSearchByTitle] = useToggleState();
   
-  const handleInputChange = e => searchTerm(e.target.value);
+  const handleInputChange = e => setSearchTerm(e.target.value);
 
   const search = () => {
     const key = isSearchByTitle ? "name" : "author";
@@ -19,9 +19,12 @@ function Search({ posts }) {
   
   return (
     <div className={classes.root}>
-    
-      
-      <List posts={search()} />
+      <input 
+        type="text" 
+        placeholder={`${isSearchByTitle ? "Search by post name" : "Search by author"}`} 
+        onChange={handleInputChange} 
+      />
+      <List posts={search()} show={show} />
     </div>
   )
 };
