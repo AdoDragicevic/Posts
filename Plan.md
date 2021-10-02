@@ -29,15 +29,7 @@ App (holds state (posts) and setPosts method, both are passed down to Posts)
 
 
   -> posts: [
-    { 
-      name: "string", 
-      address: {
-        street: "string",
-        country: "string",
-        city: "string",
-        post number: number
-      } 
-    }
+    { name address, img, id }
   ];
 
 

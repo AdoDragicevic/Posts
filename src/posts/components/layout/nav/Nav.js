@@ -11,7 +11,7 @@ function Nav({ content, setContent }) {
   };
 
   const handleHeaderClick = () => {
-    setContent("list");
+    if (content !== "list") setContent("list");
   };
 
   const getBtnTxt = () => {
