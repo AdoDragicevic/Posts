@@ -1,6 +1,6 @@
 import useLocalStorageState from "./hooks/useLocalStorageState";
 
-import Posts from "./components/posts/Posts";
+import Posts from "./posts/components/Posts";
 
 import seedData from "./seedData";
 

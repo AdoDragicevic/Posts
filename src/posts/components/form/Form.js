@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import useResetState from "../../../hooks/useResetState";
+import useResetState from "../../hooks/useResetState";
 
 import Input from "./Input";
 import Textarea from "./Textarea";

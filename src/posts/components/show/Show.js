@@ -1,4 +1,4 @@
-import { getDateFormat } from "../../../helper/helper";
+import { getDateFormat } from "../../helpers/helper";
 
 import classes from "./Show.module.css";
 

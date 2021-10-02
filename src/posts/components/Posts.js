@@ -21,8 +21,8 @@ function Posts({ posts, setPosts }) {
   };
 
   const show = id => {
-    const post = posts.find(p => p.id === id);
-    setShowPost(post);
+    const p = posts.find(p => p.id === id);
+    setShowPost(p);
     setContent("show");
   };
 
