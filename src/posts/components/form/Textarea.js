@@ -1,8 +1,13 @@
+import classes from "./Textarea.module.css";
+
 function Textarea({ name, reference, isRequired }) {
   return (
-    <div>
-      <label htmlFor={name}>{name}</label>
+    <div className={classes.root}>
+      <label className={classes.label} htmlFor={name}>
+        {name}
+      </label>
       <textarea 
+      className={classes.textarea}
         id={name} 
         name={name} 
         ref={reference} 
