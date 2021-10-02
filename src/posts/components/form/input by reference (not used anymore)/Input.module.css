@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: start;
+}
+
+.label {
+  font-size: 10px;
+  padding-left: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #227C9D;
+}
+
+.input {
+  box-sizing: border-box;
+  height: 45px;
+  line-height: 45px;
+  font-size: 1.3rem;
+  padding-left: 1rem;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #227C9D;
+  margin: .5rem 0 1.5rem 0;
+}
+
+.input:focus {
+  border: 3px solid #227C9D;
+}

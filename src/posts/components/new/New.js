@@ -1,8 +1,6 @@
 import uuid from "react-uuid";
 
-import Form from "../form/Form";
-import Card from "../layout/card/Card";
-import Header from "../UI/header/Header";
+import FormsContainer from "../form/formsContainer/FormsContainer";
 
 import { getDateStr } from "../../helpers/date";
 
@@ -19,12 +17,7 @@ function New({ add }) {
     add(newInput);
   };
 
-  return (
-    <Card>
-      <Header>Add new post</Header>
-      <Form submit={submit} />
-    </Card>
-  )
+  return <FormsContainer header="Add new post" submit={submit} />
 };
 
 export default New;

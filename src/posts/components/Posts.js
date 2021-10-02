@@ -45,12 +45,12 @@ function Posts({ posts, setPosts }) {
 
   const renderContent = () => {
     switch(content) {
-      case "new":
-        return <New add={add} setContent={setContent} />;
       case "list":
         return <Search show={show} posts={posts} />
       case "show":
         return <Show {...showPost} remove={remove} edit={edit} />;
+      case "new":
+        return <New add={add} setContent={setContent} />;
       case "edit":
         return <Edit {...showPost} update={update} />
       default:
