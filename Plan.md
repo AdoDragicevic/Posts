@@ -16,3 +16,9 @@ Bonus
  -> custom hooks
  -> search posts
  -> multipage form
+
+ 
+ Left to do:
+  -> img upload
+  -> edit
+  -> finish styling
