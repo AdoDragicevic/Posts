@@ -29,3 +29,9 @@
 .input:focus {
   border: 3px solid #227C9D;
 }
+
+.input::placeholder {
+  font-size: .6em;
+  font-weight: 100;
+  color: #227C9D;
+}
