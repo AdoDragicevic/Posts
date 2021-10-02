@@ -20,5 +20,4 @@ Bonus
  
  Left to do:
   -> img upload
-  -> edit post
   -> finish styling
