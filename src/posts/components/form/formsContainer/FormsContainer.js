@@ -25,9 +25,15 @@ function FormsContainer({ header, post, submit }) {
   const [descriptionTxt, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg, resetImg] = useStateWithReset(post ? post.img : null);
 
-  const toPreviousFormPage = () => decrementFormPage();
+  const toPreviousFormPage = e => {
+    e.preventDefault();
+    decrementFormPage();
+  };
 
-  const toNextFormPage = () => incrementFormPage();
+  const toNextFormPage = e => {
+    e.preventDefault();
+    incrementFormPage();
+  };
 
   const submitForm = async e => {
     e.preventDefault();
@@ -52,14 +58,14 @@ function FormsContainer({ header, post, submit }) {
       updateAuthor={updateAuthor}
       address={addressInput}
       updateAddress={updateAddress}
-      toNextFormPage={toNextFormPage}
+      submit={toNextFormPage}
     />,
     <SecondForm 
       img={img}
       setImg={setImg}
       resetImg={resetImg}
       goBack={toPreviousFormPage}
-      toNextFormPage={toNextFormPage}
+      submit={toNextFormPage}
     />,
     <ThirdForm 
       description={descriptionTxt} 

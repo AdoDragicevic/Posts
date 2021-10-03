@@ -6,12 +6,12 @@ import defaultImg from "../../../../imgs/picture.png";
 
 import classes from "./SecondForm.module.css";
 
-function SecondForm({ img, setImg, resetImg, goBack, toNextFormPage }) {
+function SecondForm({ img, setImg, resetImg, goBack, submit }) {
 
   const inputRef = useRef(null);
 
   const showImg = () => {
-    if(!img) return <p className={classes.noImgMsg}>Upload image</p>
+    if(!img) return <p className={classes.noImgMsg}>Please, upload an image</p>
     let url = img.demo ? img.demo : img;
     return <img className={classes.img} src={url} />
   };
@@ -23,19 +23,12 @@ function SecondForm({ img, setImg, resetImg, goBack, toNextFormPage }) {
     });
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    toNextFormPage();
-  };
-
   const handleUploadBtnClick = () => inputRef.current.click();
 
   return (
-    <form className={classes.root} onSubmit={handleSubmit}>
-      <div className={classes.imgBox}>
-        {showImg()}
-      </div>
-      <div className={classes.btnsBox}>
+    <form className={classes.root} onSubmit={submit}>
+
+<div className={classes.btnsBox}>
         <input
           hidden
           ref={inputRef}
@@ -46,19 +39,23 @@ function SecondForm({ img, setImg, resetImg, goBack, toNextFormPage }) {
         <Button 
           type="button" 
           size="small" 
-          color="danger" 
+          color="alert" 
           onClick={handleUploadBtnClick}
         >
           Upload
         </Button>
-        <Button 
+        <Button
           type="button" 
           size="small" 
           color="danger" 
           onClick={resetImg}
         >
-          Delete
+          Reset
         </Button>
+      </div>
+
+      <div className={classes.imgBox}>
+        {showImg()}
       </div>
 
       <div className={classes.footer}>
@@ -67,7 +64,6 @@ function SecondForm({ img, setImg, resetImg, goBack, toNextFormPage }) {
           type="submit" 
           size="large" 
           color="secondary"
-          onClick={handleSubmit}
         >
           Next 3/3
         </Button>
