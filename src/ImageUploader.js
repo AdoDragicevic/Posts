@@ -1,4 +1,6 @@
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
+
+import { uploadImage } from "./posts/helpers/cloudinary";
 
 function ImageUploader() {
 
@@ -7,20 +9,8 @@ function ImageUploader() {
 
   const handleChange = async e => {
     const files = e.target.files;
-    const data = new FormData();
-    data.append("file", files[0]);
-    data.append("upload_preset", "adodragi");
-    setIsLoading(true);
-    const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dggbkwj5l/image/upload",
-      {
-        method: "POST",
-        body: data
-      }
-    );
-    const file = await res.json();
-    setImg(file.secure_url);
-    setIsLoading(false);
+    const imgUrl = await uploadImage(files, setIsLoading);
+    setImg(imgUrl);
   };
 
   return (
