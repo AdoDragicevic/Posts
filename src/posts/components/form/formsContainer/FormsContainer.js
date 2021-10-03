@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useInputState from "../../../hooks/useInputState";
 import useIncrementState from "../../../hooks/useIncrementState";
+import useStateWithReset from "../../../hooks/useStateWithReset";
 
 import Header from "../../UI/header/Header";
 import FirstForm from "../forms/firstForm/FirstForm";
@@ -23,6 +24,7 @@ function FormsContainer({ header, post, submit }) {
   const [addressInput, updateAddress] = useInputState(post ? post.address : "");
   const [descriptionTxt, updateDescription] = useInputState(post ? post.description : "");
   const [image, setImage] = useState(post ? post.img : "");
+  const [previewImg, setPreviewImg, resetPreviewImg] = useStateWithReset(null);
 
   const toPreviousFormPage = () => decrementFormPage();
 
@@ -56,6 +58,9 @@ function FormsContainer({ header, post, submit }) {
     <SecondForm 
       img={image}
       setImg={setImage}
+      previewImg={previewImg}
+      setPreviewImg={setPreviewImg}
+      resetPreviewImg={resetPreviewImg}
       goBack={toPreviousFormPage}
       toNextFormPage={toNextFormPage}
     />,

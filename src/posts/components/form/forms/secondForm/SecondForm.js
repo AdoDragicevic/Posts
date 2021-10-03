@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import useStateWithReset from "../../../../hooks/useStateWithReset";
 
 import Button from "../../../UI/button/Button";
 
@@ -7,15 +6,13 @@ import defaultImg from "../../../../imgs/picture.png";
 
 import classes from "./SecondForm.module.css";
 
-function SecondForm({ img, setImg, goBack, toNextFormPage }) {
-
-  const [previewImg, setPreviewImg, resetPreviewImg] = useStateWithReset(null);
+function SecondForm({ img, setImg, previewImg, setPreviewImg, resetPreviewImg, goBack, toNextFormPage }) {
 
   const inputRef = useRef(null);
 
   const displayedImgURL = ( () => {
-    if (img) return img;
     if (previewImg) return previewImg.demo;
+    if (img) return img;
     return defaultImg;
   })();
 
@@ -33,9 +30,7 @@ function SecondForm({ img, setImg, goBack, toNextFormPage }) {
     toNextFormPage();
   };
 
-  const handleUploadBtnClick = () => {
-    inputRef.current.click();
-  };
+  const handleUploadBtnClick = () => inputRef.current.click();
 
   return (
     <form className={classes.root} onSubmit={handleSubmit}>
