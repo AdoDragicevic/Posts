@@ -4,6 +4,8 @@ import Button from "../../../UI/button/Button";
 
 import defaultImg from "../../../../imgs/picture.png";
 
+import classes from "./SecondForm.module.css";
+
 function SecondForm({ img, setImg, goBack, toNextFormPage }) {
 
   const [previewImg, setPreviewImg, resetPreviewImg] = useStateWithReset(null);
@@ -31,13 +33,13 @@ function SecondForm({ img, setImg, goBack, toNextFormPage }) {
   return (
     <form onSubmit={handleSubmit}>
       
+      <img className={classes.img} src={displayedImgURL} />
+
       <input 
         type="file" 
         name="file"
         onChange={handleChange}
       />
-      
-      <img src={displayedImgURL} />
       
       <div onClick={goBack}>&#8592;</div>
       
@@ -49,6 +51,8 @@ function SecondForm({ img, setImg, goBack, toNextFormPage }) {
       >
         Delete
       </Button>
+
+      <br/>
       
       <Button 
         type="submit" 

@@ -2,6 +2,10 @@
   margin-bottom: 2rem;
 }
 
+.searchContent {
+  margin: 1rem;
+}
+
 .btn {
   float: right;
   font-family: inherit;
@@ -24,7 +28,7 @@
 @media screen and (max-width: 920px) {
   .btn {
     transform: translatex(0);
-    height: 35px;
+    height: 30px;
   }
 }
 
@@ -42,6 +46,7 @@
   margin: .5rem 0 5rem 0;
   outline: none;
   transition: all .4s ease;
+  border-radius: 1px;
 }
 
 .input:focus {

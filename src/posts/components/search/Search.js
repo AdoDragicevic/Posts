@@ -21,15 +21,17 @@ function Search({ posts, show }) {
   return (
     <div className={classes.root}>
       <Header>Posts</Header>
-      <button className={classes.btn} onClick={toggleIsSearchByTitle}>
-        {`Searching by ${isSearchByTitle ? "title" : "author"}`}
-      </button>
-      <input
-        className={classes.input}
-        type="text" 
-        placeholder="Search..." 
-        onChange={handleInputChange} 
-      />
+      <div className={classes.searchContent}>
+        <button className={classes.btn} onClick={toggleIsSearchByTitle}>
+          {`Searching by ${isSearchByTitle ? "title" : "author"}`}
+        </button>
+        <input
+          className={classes.input}
+          type="text" 
+          placeholder="Search..." 
+          onChange={handleInputChange} 
+        />
+      </div>
       <List posts={search()} show={show} />
     </div>
   )

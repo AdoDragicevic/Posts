@@ -9,6 +9,12 @@
   width: 300px;
 }
 
+@media screen and (max-width: 500px) {
+  .root:hover .line {
+    width: 150px;
+  }
+}
+
 .line {
   width: 30px;
   border-bottom: 1px solid #3C91E6;
