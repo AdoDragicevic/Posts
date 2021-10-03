@@ -11,9 +11,9 @@ function Show({ title, author, address, description, img, date, id, remove, edit
   return (
     <>
       <Header>{title}</Header>
-      <h4 className={classes.subtitle}> 
+      <p className={classes.author}> 
         <em> by </em> {author}
-      </h4>
+      </p>
       <div className={classes.container}>
         <img scr={img} />
         <div className={classes.box}> 
