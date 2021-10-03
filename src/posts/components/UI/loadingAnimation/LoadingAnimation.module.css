@@ -1,13 +1,13 @@
 .root {
- 
-}
-
-.msg {
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .svg {
-  width: 300px;
+  width: 150px;
+  transform: translateX(20px);
   height: auto;
-  display: none;
+  margin-top: -20px;
 }

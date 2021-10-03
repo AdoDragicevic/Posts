@@ -16,7 +16,7 @@ function FormsContainer({ header, post, submit }) {
   
   const [formPage, incrementFormPage, decrementFormPage] = useIncrementState();
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [titleInput, updateTitle] = useInputState(post ? post.title : "");
   const [authorInput, updateAuthor] = useInputState(post ? post.author : "");
@@ -68,7 +68,7 @@ function FormsContainer({ header, post, submit }) {
   ];
 
 
-  if (isLoading) return <LoadingAnimation msg="Saving data..." />;
+  if (isLoading) return <LoadingAnimation msg="Saving..." />;
 
   return (
     <>
