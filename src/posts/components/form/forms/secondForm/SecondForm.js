@@ -28,7 +28,7 @@ function SecondForm({ img, setImg, resetImg, goBack, submit }) {
   return (
     <form className={classes.root} onSubmit={submit}>
 
-<div className={classes.btnsBox}>
+      <div className={classes.btns}>
         <input
           hidden
           ref={inputRef}

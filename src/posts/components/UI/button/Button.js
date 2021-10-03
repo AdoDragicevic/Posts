@@ -1,6 +1,6 @@
 import classes from "./Button.module.css";
 
-function Button({ children, type, styles, size, color, onClick }) {
+function Button({ children, type, styles, size, color, isHidden, isDisabled, onClick }) {
   
   const css = `
     ${classes.btn}
@@ -14,6 +14,8 @@ function Button({ children, type, styles, size, color, onClick }) {
       type={type}
       onClick={onClick} 
       style={styles}
+      hidden={isHidden}
+      disabled={isDisabled}
     >
       {children}
     </button>
