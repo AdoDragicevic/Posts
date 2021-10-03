@@ -14,7 +14,7 @@ function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAd
           onChange={updateTitle}
           name="title" 
           placeholder="My first post"
-          isRequired={false}
+          isRequired
         />
         <Input 
           type="text" 
@@ -22,7 +22,7 @@ function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAd
           onChange={updateAuthor}
           name="author"
           placeholder="John Smith"
-          isRequired={false}
+          isRequired
         />
         <Input 
           type="email" 
@@ -30,7 +30,7 @@ function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAd
           onChange={updateAddress}
           name="address"
           placeholder="john.smith@matrix.com"
-          isRequired={false}
+          isRequired
         />
       </div>
       <div>

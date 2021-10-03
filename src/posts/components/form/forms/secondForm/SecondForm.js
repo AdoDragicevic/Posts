@@ -35,6 +35,7 @@ function SecondForm({ img, setImg, resetImg, goBack, submit }) {
           type="file" 
           name="file"
           onChange={handleChange}
+          required
         />
         <Button 
           type="button" 
