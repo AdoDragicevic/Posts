@@ -6,6 +6,9 @@ import Header from "../../UI/header/Header";
 import FirstForm from "../forms/firstForm/FirstForm";
 import SecondForm from "../forms/secondForm/SecondForm";
 import ThirdForm from "../forms/thirdForm/ThirdForm";
+import LoadingAnimation from "../../UI/loadingAnimation/LoadingAnimation";
+
+import { uploadImage } from "../../../helpers/cloudinary";
 
 import classes from "./FormsContainer.module.css";
 
@@ -13,7 +16,7 @@ function FormsContainer({ header, post, submit }) {
   
   const [formPage, incrementFormPage, decrementFormPage] = useIncrementState();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [titleInput, updateTitle] = useInputState(post ? post.title : "");
   const [authorInput, updateAuthor] = useInputState(post ? post.author : "");
@@ -27,12 +30,15 @@ function FormsContainer({ header, post, submit }) {
 
   const submitForm = async e => {
     e.preventDefault();
+    setIsLoading(true);
+    const imageURL = await uploadImage(image);
+    setIsLoading(false);
     const inputVals = { 
       title: titleInput, 
       author: authorInput, 
       address: addressInput, 
       description: descriptionTxt, 
-      img: image
+      img: imageURL
     };
     submit(inputVals);
   };
@@ -60,6 +66,9 @@ function FormsContainer({ header, post, submit }) {
       submit={submitForm} 
     />
   ];
+
+
+  if (isLoading) return <LoadingAnimation msg="Saving data..." />;
 
   return (
     <>

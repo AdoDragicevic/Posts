@@ -8,3 +8,12 @@
   max-width: 650px;
   margin: 3.5rem auto;
 }
+
+.loading {
+  width: 150px;
+  opacity: .4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
