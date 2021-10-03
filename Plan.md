@@ -21,3 +21,10 @@ Bonus
  Left to do:
   -> img upload
   -> finish styling
+
+
+Additional plans:
+  -> pagination
+  -> line animation below multi page form
+  -> dark mode with context
+  -> maybe reducer? (might be an overkill for this project)
