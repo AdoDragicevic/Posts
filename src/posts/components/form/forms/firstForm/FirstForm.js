@@ -3,9 +3,15 @@ import Button from "../../../UI/button/Button";
 
 import classes from "./FirstForm.module.css";
 
-function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAddress, submit }) {
+function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAddress, toNextFormPage }) {
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    toNextFormPage();
+  };
+
   return (
-    <form onSubmit={submit}>
+    <form onSubmit={handleSubmit}>
       <div className={classes.inputs}>
         <Input
           type="text" 

@@ -1,5 +1,62 @@
-function SecondForm() {
-  return <p>Second</p>
+import { useState } from "react";
+import Button from "../../../UI/button/Button";
+
+import defaultImg from "../../../../imgs/picture.png";
+
+function SecondForm({ img, setImg, goBack, toNextFormPage }) {
+
+  const [previewImg, setPreviewImg] = useState(null);
+
+  const image = ( () => {
+    if (img) return img;
+    if (previewImg) return previewImg.demo;
+    else return defaultImg;
+  })();
+
+  const handleChange = e => {
+    setImg("");
+    setPreviewImg({
+      demo: URL.createObjectURL(e.target.files[0]),
+      file: e.target.files[0]
+    });
+  };
+
+  const handleRemove = () => {
+    setPreviewImg(null);
+    if (img !== "") setImg("");
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setImg(previewImg.files)
+    toNextFormPage();
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input 
+        type="file" 
+        name="file"
+        onChange={handleChange}
+      />
+      <Button 
+        type="submit" 
+        size="large" 
+        color="secondary"
+        onClick={handleSubmit}
+      >
+        Next 3/3
+      </Button>
+      <div>
+        <img src={image} />
+        <div onClick={goBack}>&#8592;</div>
+        <Button type="button" size="small" color="danger" onClick={handleRemove}>
+          Remove img
+        </Button>
+      </div>
+      
+    </form>
+  )
 };
 
 export default SecondForm;

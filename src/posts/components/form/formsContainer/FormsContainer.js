@@ -9,33 +9,30 @@ import ThirdForm from "../forms/thirdForm/ThirdForm";
 
 import classes from "./FormsContainer.module.css";
 
-function FormsContainer({ header, title, author, address, description, submit, img }) {
+function FormsContainer({ header, post, submit }) {
   
   const [formPage, incrementFormPage, decrementFormPage] = useIncrementState();
 
-  const [titleInput, updateTitle] = useInputState(title || "");
-  const [authorInput, updateAuthor] = useInputState(author || "");
-  const [addressInput, updateAddress] = useInputState(address || "");
-  const [descriptionTxt, updateDescription] = useInputState(description || "");
-  const [imgURL, setImgURL] = useState(img || "");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const goToPreviousFormPage = () => {
-    decrementFormPage();
-  };
+  const [titleInput, updateTitle] = useInputState(post ? post.title : "");
+  const [authorInput, updateAuthor] = useInputState(post ? post.author : "");
+  const [addressInput, updateAddress] = useInputState(post ? post.address : "");
+  const [descriptionTxt, updateDescription] = useInputState(post ? post.description : "");
+  const [image, setImage] = useState(post ? post.img : "");
 
-  const goToNextFormPage = e => {
-    e.preventDefault();
-    incrementFormPage();
-  };
+  const toPreviousFormPage = () => decrementFormPage();
 
-  const submitForm = e => {
+  const toNextFormPage = () => incrementFormPage();
+
+  const submitForm = async e => {
     e.preventDefault();
     const inputVals = { 
       title: titleInput, 
       author: authorInput, 
       address: addressInput, 
       description: descriptionTxt, 
-      img: ""
+      img: image
     };
     submit(inputVals);
   };
@@ -48,18 +45,18 @@ function FormsContainer({ header, title, author, address, description, submit, i
       updateAuthor={updateAuthor}
       address={addressInput}
       updateAddress={updateAddress}
-      submit={goToNextFormPage}
+      toNextFormPage={toNextFormPage}
     />,
     <SecondForm 
-      img={imgURL}
-      setImgURL={setImgURL}
-      goBack={goToPreviousFormPage}
-      submit={goToNextFormPage}
+      img={image}
+      setImg={setImage}
+      goBack={toPreviousFormPage}
+      toNextFormPage={toNextFormPage}
     />,
     <ThirdForm 
       description={descriptionTxt} 
       updateDescription={updateDescription}
-      goBack={goToPreviousFormPage} 
+      goBack={toPreviousFormPage} 
       submit={submitForm} 
     />
   ];

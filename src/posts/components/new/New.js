@@ -7,7 +7,6 @@ import { getDateStr } from "../../helpers/date";
 import classes from "./New.module.css";
 
 function New({ add }) {
-
   const submit = inputData => {
     const newInput = {
       ...inputData,

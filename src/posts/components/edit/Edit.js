@@ -4,25 +4,17 @@ import FormsContainer from "../form/formsContainer/FormsContainer";
 
 import "./Edit.module.css";
 
-function Edit({ update, id, title, author, address, description, img }) {
+function Edit({ post, update }) {
 
   const submit = inputData => {
-    const updatedInput = {
-      ...inputData,
-      id: id,
-      date: getDateStr()
-    };
-    update(id, updatedInput);
+    const updatedInput = { ...inputData, id: post.id, date: getDateStr() };
+    update(post.id, updatedInput);
   };
 
   return (
     <FormsContainer 
-      header="Edit post" 
-      title={title}
-      author={author}
-      address={address}
-      description={description}
-      img={img}
+      header="Edit post"
+      post={post}
       submit={submit} 
     />
   )

@@ -53,7 +53,7 @@ function Posts({ posts, setPosts }) {
       case "new":
         return <New add={add} setContent={setContent} />;
       case "edit":
-        return <Edit {...showPost} update={update} />
+        return <Edit post={showPost} update={update} />
       default:
         return null;
     }

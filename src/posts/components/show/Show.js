@@ -11,7 +11,8 @@ function Show({ title, author, address, description, img, date, id, remove, edit
   return (
     <>
       <Header>{title}</Header>
-      <p className={classes.author}> 
+      <img src={img} />
+      <p className={classes.author}>
         <em> by </em> {author}
       </p>
       <div className={classes.container}>
