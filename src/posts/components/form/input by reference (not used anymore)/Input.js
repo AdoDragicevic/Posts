@@ -1,7 +1,7 @@
 /*
 import classes from "./Input.module.css";
 
-function TextInput({ name, type, reference, isRequired }) {
+function Input({ name, type, reference, isRequired }) {
   return (
     <div className={classes.root}>
       <label className={classes.label} htmlFor={name}>{name}</label>
@@ -17,5 +17,5 @@ function TextInput({ name, type, reference, isRequired }) {
   );
 };
 
-export default TextInput;
+export default Input;
 */

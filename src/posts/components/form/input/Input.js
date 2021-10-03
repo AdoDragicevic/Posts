@@ -1,6 +1,6 @@
 import classes from "./Input.module.css";
 
-function TextInput({ name, type, value, onChange, placeholder, isRequired }) {
+function Input({ name, type, value, onChange, placeholder, isRequired }) {
   return (
     <div className={classes.root}>
       <label className={classes.label} htmlFor={name}>{name}</label>
@@ -18,4 +18,4 @@ function TextInput({ name, type, value, onChange, placeholder, isRequired }) {
   );
 };
 
-export default TextInput;
+export default Input;
