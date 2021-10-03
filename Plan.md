@@ -16,10 +16,12 @@ Bonus
  -> custom hooks
  -> search posts
  -> multipage form
+ -> loading animation
 
  
  Left to do:
-  -> img upload
+  -> reduce img size on upload
+  -> delete uploaded img when post is deleted / img replaced
   -> finish styling
 
 
