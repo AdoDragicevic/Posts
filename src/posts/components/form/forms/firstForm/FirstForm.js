@@ -11,7 +11,7 @@ function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAd
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={classes.root} onSubmit={handleSubmit}>
       <div className={classes.inputs}>
         <Input
           type="text" 
@@ -38,9 +38,11 @@ function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAd
           isRequired={false}
         />
       </div>
-      <Button type="submit" size="large" color="secondary">
-        Next 2/3
-      </Button>
+      <div>
+        <Button type="submit" size="large" color="secondary">
+          Next 2/3
+        </Button>
+      </div>
     </form>
   )
 };

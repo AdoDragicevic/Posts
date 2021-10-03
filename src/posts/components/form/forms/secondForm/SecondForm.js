@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import useStateWithReset from "../../../../hooks/useStateWithReset";
 
 import Button from "../../../UI/button/Button";
@@ -9,6 +10,8 @@ import classes from "./SecondForm.module.css";
 function SecondForm({ img, setImg, goBack, toNextFormPage }) {
 
   const [previewImg, setPreviewImg, resetPreviewImg] = useStateWithReset(null);
+
+  const inputRef = useRef(null);
 
   const displayedImgURL = ( () => {
     if (img) return img;
@@ -30,38 +33,53 @@ function SecondForm({ img, setImg, goBack, toNextFormPage }) {
     toNextFormPage();
   };
 
+  const handleUploadBtnClick = () => {
+    inputRef.current.click();
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      
-      <img className={classes.img} src={displayedImgURL} />
+    <form className={classes.root} onSubmit={handleSubmit}>
+      <div className={classes.imgBox}>
+        <img className={classes.img} src={displayedImgURL} />
+      </div>
+      <div className={classes.btnsBox}>
+        <input
+          hidden
+          ref={inputRef}
+          type="file" 
+          name="file"
+          onChange={handleChange}
+        />
+        <Button 
+          type="button" 
+          size="small" 
+          color="danger" 
+          onClick={handleUploadBtnClick}
+        >
+          Upload
+        </Button>
+        <Button 
+          type="button" 
+          size="small" 
+          color="danger" 
+          onClick={resetPreviewImg}
+        >
+          Delete
+        </Button>
+      </div>
 
-      <input 
-        type="file" 
-        name="file"
-        onChange={handleChange}
-      />
-      
-      <div onClick={goBack}>&#8592;</div>
-      
-      <Button 
-        type="button" 
-        size="small" 
-        color="danger" 
-        onClick={resetPreviewImg}
-      >
-        Delete
-      </Button>
+      <div className={classes.footer}>
+        <div className={classes.goBack} onClick={goBack}>&#8592;</div>
+        <Button 
+          type="submit" 
+          size="large" 
+          color="secondary"
+          onClick={handleSubmit}
+        >
+          Next 3/3
+        </Button>
+      </div>
 
-      <br/>
-      
-      <Button 
-        type="submit" 
-        size="large" 
-        color="secondary"
-        onClick={handleSubmit}
-      >
-        Next 3/3
-      </Button>
     </form>
   )
 };
