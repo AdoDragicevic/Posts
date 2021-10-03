@@ -23,8 +23,7 @@ function FormsContainer({ header, post, submit }) {
   const [authorInput, updateAuthor] = useInputState(post ? post.author : "");
   const [addressInput, updateAddress] = useInputState(post ? post.address : "");
   const [descriptionTxt, updateDescription] = useInputState(post ? post.description : "");
-  const [image, setImage] = useState(post ? post.img : "");
-  const [previewImg, setPreviewImg, resetPreviewImg] = useStateWithReset(null);
+  const [img, setImg, resetImg] = useStateWithReset(post ? post.img : null);
 
   const toPreviousFormPage = () => decrementFormPage();
 
@@ -33,14 +32,14 @@ function FormsContainer({ header, post, submit }) {
   const submitForm = async e => {
     e.preventDefault();
     setIsLoading(true);
-    const imageURL = await uploadImage(image);
+    const imgURL = (post && img === post.img) ? img : await uploadImage(img.files);
     setIsLoading(false);
     const inputVals = { 
       title: titleInput, 
       author: authorInput, 
       address: addressInput, 
       description: descriptionTxt, 
-      img: imageURL
+      img: imgURL
     };
     submit(inputVals);
   };
@@ -56,11 +55,9 @@ function FormsContainer({ header, post, submit }) {
       toNextFormPage={toNextFormPage}
     />,
     <SecondForm 
-      img={image}
-      setImg={setImage}
-      previewImg={previewImg}
-      setPreviewImg={setPreviewImg}
-      resetPreviewImg={resetPreviewImg}
+      img={img}
+      setImg={setImg}
+      resetImg={resetImg}
       goBack={toPreviousFormPage}
       toNextFormPage={toNextFormPage}
     />,

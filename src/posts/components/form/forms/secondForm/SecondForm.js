@@ -6,27 +6,25 @@ import defaultImg from "../../../../imgs/picture.png";
 
 import classes from "./SecondForm.module.css";
 
-function SecondForm({ img, setImg, previewImg, setPreviewImg, resetPreviewImg, goBack, toNextFormPage }) {
+function SecondForm({ img, setImg, resetImg, goBack, toNextFormPage }) {
 
   const inputRef = useRef(null);
 
-  const displayedImgURL = ( () => {
-    if (previewImg) return previewImg.demo;
-    if (img) return img;
-    return defaultImg;
-  })();
+  const showImg = () => {
+    if(!img) return <p className={classes.noImgMsg}>Upload image</p>
+    let url = img.demo ? img.demo : img;
+    return <img className={classes.img} src={url} />
+  };
 
   const handleChange = e => {
-    setPreviewImg({
+    setImg({
       demo: URL.createObjectURL(e.target.files[0]),
       files: e.target.files
     });
-    setImg("");
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    setImg(previewImg.files);
     toNextFormPage();
   };
 
@@ -35,7 +33,7 @@ function SecondForm({ img, setImg, previewImg, setPreviewImg, resetPreviewImg, g
   return (
     <form className={classes.root} onSubmit={handleSubmit}>
       <div className={classes.imgBox}>
-        <img className={classes.img} src={displayedImgURL} />
+        {showImg()}
       </div>
       <div className={classes.btnsBox}>
         <input
@@ -57,7 +55,7 @@ function SecondForm({ img, setImg, previewImg, setPreviewImg, resetPreviewImg, g
           type="button" 
           size="small" 
           color="danger" 
-          onClick={resetPreviewImg}
+          onClick={resetImg}
         >
           Delete
         </Button>
