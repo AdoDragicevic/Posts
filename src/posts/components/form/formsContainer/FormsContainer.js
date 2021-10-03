@@ -1,8 +1,8 @@
+import { useState } from "react";
 import useInputState from "../../../hooks/useInputState";
 import useIncrementState from "../../../hooks/useIncrementState";
 
 import Header from "../../UI/header/Header";
-import Container from "../../layout/container/Container";
 import FirstForm from "../forms/firstForm/FirstForm";
 import SecondForm from "../forms/secondForm/SecondForm";
 import ThirdForm from "../forms/thirdForm/ThirdForm";
@@ -17,6 +17,7 @@ function FormsContainer({ header, title, author, address, description, submit, i
   const [authorInput, updateAuthor] = useInputState(author || "");
   const [addressInput, updateAddress] = useInputState(address || "");
   const [descriptionTxt, updateDescription] = useInputState(description || "");
+  const [imgURL, setImgURL] = useState(img || "");
 
   const goToPreviousFormPage = () => {
     decrementFormPage();
@@ -50,7 +51,8 @@ function FormsContainer({ header, title, author, address, description, submit, i
       submit={goToNextFormPage}
     />,
     <SecondForm 
-      img=""
+      img={imgURL}
+      setImgURL={setImgURL}
       goBack={goToPreviousFormPage}
       submit={goToNextFormPage}
     />,
