@@ -9,41 +9,51 @@ function Show({ title, author, address, description, img, date, id, remove, edit
   const handleEdit = () => edit(id);
 
   return (
-    <>
+    <div className={classes.root}>
+
       <Header>{title}</Header>
-      <img src={img} />
+      
+      <div className={classes.imgBox}>
+        <img className={classes.img} src={img} />
+      </div>
+      
       <p className={classes.author}>
         <em> by </em> {author}
       </p>
-      <div className={classes.container}>
-        <img scr={img} />
-        <div className={classes.box}> 
-          <div className={classes.metadata}>
-            <a className={classes.link} href ={`mailto: ${address}`}>{address}</a>
-            <span>{date}</span>
-          </div>
-          <div className={classes.btns}>
-            <Button 
-                size="small"
-                color="alert"
-                onClick={handleEdit}
-              >
-                Edit
-              </Button>
-              <Button 
-                size="small"
-                color="danger"
-                onClick={handleDelete}
-              >
-                Delete
-            </Button>
-          </div>
+
+      
+      <div className={classes.info}> 
+        
+        <div className={classes.metadata}>
+          <a className={classes.link} href ={`mailto: ${address}`}>
+            {address}
+          </a>
+          <span>{date}</span>
         </div>
-        <div className={classes.content}>
-          {description}
+          
+        <div className={classes.btns}>
+          <Button 
+            size="small"
+            color="alert"
+            onClick={handleEdit}
+          >
+            Edit
+          </Button>
+          <Button 
+            size="small"
+            color="danger"
+            onClick={handleDelete}
+          >
+            Delete
+          </Button>
         </div>
       </div>
-    </>
+        
+      <div className={classes.content}>
+        {description}
+      </div>
+
+    </div>
   )
 };
 
