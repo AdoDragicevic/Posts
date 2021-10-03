@@ -28,7 +28,6 @@ function FormsContainer({ header, title, author, address, description, submit, i
   };
 
   const submitForm = e => {
-    console.log(description);
     e.preventDefault();
     const inputVals = { 
       title: titleInput, 
