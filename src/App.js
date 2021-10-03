@@ -2,8 +2,6 @@ import useLocalStorageState from "./hooks/useLocalStorageState";
 
 import Posts from "./posts/components/Posts";
 
-//import ImageUploader from "./ImageUploader";
-
 import seedData from "./seedData";
 
 import './App.css';

@@ -1,3 +1,4 @@
+/*
 import classes from "./Input.module.css";
 
 function TextInput({ name, type, reference, isRequired }) {
@@ -17,3 +18,4 @@ function TextInput({ name, type, reference, isRequired }) {
 };
 
 export default TextInput;
+*/
