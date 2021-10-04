@@ -6,11 +6,12 @@
 }
 
 .label {
-  font-size: 10px;
+  font-size: 14px;
   padding-left: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #227C9D;
+  color: #0D0630;
+  font-weight: 500;
 }
 
 .input {
@@ -28,8 +29,7 @@
 }
 
 .input:focus {
-  border: 2px solid #227C9D;
-  
+  border: 2px solid #227C9D; 
 }
 
 .input:focus::placeholder {
@@ -40,5 +40,6 @@
   font-size: .6em;
   font-weight: 100;
   color: #227C9D;
+  letter-spacing: 1px;
   transition: all .5s ease;
 }
