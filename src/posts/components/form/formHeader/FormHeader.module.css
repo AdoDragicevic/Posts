@@ -1,0 +1,11 @@
+.root {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.msg {
+  font-weight: 600;
+  letter-spacing: 1px;
+}

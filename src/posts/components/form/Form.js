@@ -1,5 +1,6 @@
 import useIncrementState from "../../hooks/useIncrementState";
 
+import FormHeader from "./formHeader/FormHeader";
 import FormFooter from "./formFooter/FormFooter";
 
 import classes from "./Form.module.css";
@@ -9,25 +10,10 @@ function Form({ post, submit }) {
 
   const [page, nextPage, previousPage] = useIncrementState(1);
 
-  console.log(page);
-
-  const getHeaderMsg = () => {
-    switch(page) {
-      case 1:
-        return "Personal data";
-      case 2:
-        return "Image";
-      case 3:
-        return "Content";
-    };
-  };
-
   return (
     <form className={classes.root}>
       
-      <div className={classes.header}>
-        <p>{getHeaderMsg()}</p>
-      </div>
+      <FormHeader page={page} />
 
       <div className={classes.body}>
 
