@@ -19,11 +19,7 @@ function Form({ post, submit }) {
 
       </div>
 
-      <FormFooter
-        txt={page === 3 ? "Submit" : "Next"}  
-        back={page === 1 ? null : previousPage}
-        next={page === 3 ? submit : nextPage}
-      />
+      <FormFooter page={page} back={previousPage} next={nextPage} submit={submit} />
 
     </form>
   )

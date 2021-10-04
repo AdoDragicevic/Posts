@@ -2,16 +2,16 @@ import Button from "../../UI/button/Button";
 
 import classes from "./FormFooter.module.css";
 
-function FormFooter({ back, next, txt }) {
+function FormFooter({ page, back, next, submit }) {
   
   const handleClick = e => {
     e.preventDefault();
-    next();
+    page === 3 ? submit() : next();
   };
   
   return (
     <div className={classes.root}>
-      {back && (
+      {page !== 1 && (
         <div className={classes.back} onClick={back}>&#8592;</div>
       )}
       <Button
@@ -20,7 +20,7 @@ function FormFooter({ back, next, txt }) {
         color="primary"
         onClick={handleClick}
       >
-        {txt}
+        {page === 3 ? "Submit" : "Next"}
       </Button>
     </div>
   )
