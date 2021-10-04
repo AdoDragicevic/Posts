@@ -11,7 +11,7 @@ const seedData = [
     date: "4.10.2021"
   },
   {
-    title: "What when you have all 7 dragon balls",
+    title: "What to do when you have all 7 dragon balls",
     author: "Vegeta",
     address: "vegetaisthebest@dbz.com",
     description: loremIpsum,
