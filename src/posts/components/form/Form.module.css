@@ -3,12 +3,12 @@
   width: 100%;
   max-width: 650px;
   margin: 2rem auto;
-  height: 400px;
+  height: 380px;
 }
 
 .header {
   border: 1px solid yellowgreen;
-  height: 50px;
+  height: 40px;
 }
 
 .body {
@@ -18,5 +18,5 @@
 
 .footer {
   border: 1px solid yellowgreen;
-  height: 50px;
+  height: 40px;
 }
