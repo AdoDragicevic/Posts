@@ -7,7 +7,7 @@ import List from "../list/List";
 
 import classes from "./Search.module.css";
 
-function Search({ posts, show }) {
+function Search({ posts, openPost }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearchByTitle, toggleIsSearchByTitle] = useToggleState();
   
@@ -32,7 +32,7 @@ function Search({ posts, show }) {
           onChange={handleInputChange} 
         />
       </div>
-      <List posts={search()} show={show} />
+      <List posts={search()} openPost={openPost} />
     </div>
   )
 };

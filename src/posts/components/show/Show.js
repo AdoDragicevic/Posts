@@ -3,10 +3,12 @@ import Button from "../UI/button/Button";
 
 import classes from "./Show.module.css";
 
-function Show({ title, author, address, description, img, date, id, remove, edit }) {  
+function Show({ post, deletePost, openEdit }) {  
   
-  const handleDelete = () => remove(id);
-  const handleEdit = () => edit(id);
+  const { title, author, address, description, img, date, id } = post;
+
+  const handleDelete = () => deletePost(id);
+  const handleEdit = () => openEdit(id);
 
   return (
     <div className={classes.root}>

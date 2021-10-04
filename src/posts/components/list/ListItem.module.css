@@ -12,10 +12,6 @@
   transition: all .5s;
 }
 
-.img:hover {
-  transform: scale(.98);
-}
-
 
 .root:hover .line {
   width: 300px;

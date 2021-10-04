@@ -12,7 +12,8 @@ function Input({ name, type, value, onChange, placeholder, isRequired }) {
         value={value}
         placeholder={placeholder}
         onChange={onChange} 
-        required={isRequired} 
+        required={isRequired}
+        maxLength={75}
       />
     </div>
   );

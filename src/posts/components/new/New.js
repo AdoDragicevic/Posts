@@ -6,14 +6,14 @@ import { getDateStr } from "../../helpers/date";
 
 import classes from "./New.module.css";
 
-function New({ add }) {
+function New({ addPost }) {
   const submit = inputData => {
     const newInput = {
       ...inputData,
       id: uuid(),
       date: getDateStr()
     };
-    add(newInput);
+    addPost(newInput);
   };
 
   return <FormsContainer header="Add new post" submit={submit} />

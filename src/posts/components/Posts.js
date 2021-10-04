@@ -12,47 +12,47 @@ import classes from "./Posts.module.css";
 function Posts({ posts, setPosts }) {
   
   const [content, setContent] = useState("new");
-  const [showPost, setShowPost] = useState(null);
+  const [shownPost, setShownPost] = useState(null);
 
-  const add = newPost => {
+  const addPost = newPost => {
     setPosts([newPost, ...posts]);
     setContent("list");
   };
 
-  const show = id => {
-    const p = posts.find(p => p.id === id);
-    setShowPost(p);
-    setContent("show");
-  };
-
-  const edit = id => {
-    const p = posts.find(post => post.id === id);
-    setShowPost(p);
-    setContent("edit");
-  };
-
-  const remove = id => {
+  const deletePost = id => {
     const p = posts.filter(post => post.id !== id);
     setPosts(p);
     setContent("list");
   };
 
-  const update = (id, newPost) => {
+  const updatePost = (id, newPost) => {
     const otherPosts = posts.filter(post => post.id !== id);
     setPosts([newPost,...otherPosts]);
     setContent("list");
   };
 
+  const openPost = id => {
+    const p = posts.find(p => p.id === id);
+    setShownPost(p);
+    setContent("show");
+  };
+
+  const openEdit = id => {
+    const p = posts.find(post => post.id === id);
+    setShownPost(p);
+    setContent("edit");
+  };
+
   const renderContent = () => {
     switch(content) {
       case "list":
-        return <Search show={show} posts={posts} />
+        return <Search openPost={openPost} posts={posts} />
       case "show":
-        return <Show {...showPost} remove={remove} edit={edit} />;
+        return <Show post={shownPost} deletePost={deletePost} openEdit={openEdit} />;
       case "new":
-        return <New add={add} setContent={setContent} />;
+        return <New addPost={addPost} setContent={setContent} />;
       case "edit":
-        return <Edit post={showPost} update={update} />
+        return <Edit post={shownPost} updatePost={updatePost} />
       default:
         return null;
     }

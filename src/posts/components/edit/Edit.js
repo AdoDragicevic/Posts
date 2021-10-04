@@ -4,11 +4,11 @@ import FormsContainer from "../form/formsContainer/FormsContainer";
 
 import "./Edit.module.css";
 
-function Edit({ post, update }) {
+function Edit({ post, updatePost }) {
 
   const submit = inputData => {
     const updatedInput = { ...inputData, id: post.id, date: getDateStr() };
-    update(post.id, updatedInput);
+    updatePost(post.id, updatedInput);
   };
 
   return (
