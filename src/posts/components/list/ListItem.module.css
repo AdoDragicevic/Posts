@@ -1,28 +1,21 @@
-.img {
-  width: 100%;
-  max-width: 500px;
-  height: 250px;
-  z-index: 1;
-}
-
-.info {
-  width: 100%;
-  max-width: 400px;
-  border: 1px solid red;
-  text-align: center;
-  margin: -100px auto;
-  z-index: 2;
-  background-color: red;
-  color: white;
-  margin-bottom: 3rem;
-}
-
 .root {
   margin: 4rem 1rem;
   padding: 1rem;
   cursor: pointer;
   transition: all .2s ease-in;
 }
+.img {
+  width: 100%;
+  max-width: 500px;
+  height: 250px;
+  z-index: 1;
+  transition: all .5s;
+}
+
+.img:hover {
+  transform: scale(.98);
+}
+
 
 .root:hover .line {
   width: 300px;
