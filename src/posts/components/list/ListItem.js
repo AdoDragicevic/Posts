@@ -7,7 +7,7 @@ function ListItem({ img, title, address, author, id, openPost }) {
     <li className={classes.root} onClick={ () => openPost(id) }>
       <Header>{title}</Header>
       <div className={classes.imgBox}>
-        <img className={classes.img} src={img} />
+        <img className={classes.img} src={img} alt="Post" />
       </div>
       <div className={classes.info}>
         <p className={classes.address}>{address}</p>

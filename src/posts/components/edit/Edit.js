@@ -2,7 +2,6 @@ import { getDateStr } from "../../helpers/date";
 
 import FormsContainer from "../form/formsContainer/FormsContainer";
 
-import "./Edit.module.css";
 
 function Edit({ post, updatePost }) {
 

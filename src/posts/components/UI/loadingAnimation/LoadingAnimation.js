@@ -8,7 +8,7 @@ function LoadingAnimation({ msg }) {
   return (
     <div className={classes.root}>
       <Header>{msg}</Header>
-      <img className={classes.svg} src={loadingSVG} />
+      <img className={classes.svg} src={loadingSVG} alt="Loading" />
     </div>
   )
 };

@@ -2,10 +2,6 @@ import Textarea from "../../textarea/Textarea";
 import Button from "../../../UI/button/Button";
 
 function ThirdForm({ description, updateDescription, goBack, submit }) {
-  
-  const textAreaChange = e => {
-    console.log(e.target);
-  };
 
   return (
     <form onSubmit={submit}>

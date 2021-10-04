@@ -16,7 +16,7 @@ function Show({ post, deletePost, openEdit }) {
       <Header>{title}</Header>
       
       <div className={classes.imgBox}>
-        <img className={classes.img} src={img} />
+        <img className={classes.img} src={img} alt="Post" />
       </div>
       
       <p className={classes.author}>

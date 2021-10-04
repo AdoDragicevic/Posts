@@ -4,7 +4,6 @@ import FormsContainer from "../form/formsContainer/FormsContainer";
 
 import { getDateStr } from "../../helpers/date";
 
-import classes from "./New.module.css";
 
 function New({ addPost }) {
   const submit = inputData => {

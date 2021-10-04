@@ -2,8 +2,6 @@ import { useRef } from "react";
 
 import Button from "../../../UI/button/Button";
 
-import defaultImg from "../../../../imgs/picture.png";
-
 import classes from "./SecondForm.module.css";
 
 function SecondForm({ img, setImg, resetImg, goBack, submit }) {
@@ -13,7 +11,7 @@ function SecondForm({ img, setImg, resetImg, goBack, submit }) {
   const showImg = () => {
     if(!img) return <p className={classes.noImgMsg}>Please, upload an image</p>
     let url = img.demo ? img.demo : img;
-    return <img className={classes.img} src={url} />
+    return <img className={classes.img} src={url} alt="Current" />
   };
 
   const handleChange = e => {
