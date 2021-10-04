@@ -63,7 +63,7 @@ function SecondForm({ img, setImg, resetImg, goBack, submit }) {
         <Button 
           type="submit" 
           size="large" 
-          color="secondary"
+          color="primary"
           onClick={img ? submit : null}
         >
           Next 3/3

@@ -16,7 +16,7 @@ function ThirdForm({ description, updateDescription, goBack, submit }) {
       />
       <div className={classes.footer}>
         <div className={classes.goBack} onClick={goBack}>&#8592;</div>
-        <Button type="submit" size="large" color="secondary">
+        <Button type="submit" size="large" color="primary">
           Submit
         </Button>
       </div>

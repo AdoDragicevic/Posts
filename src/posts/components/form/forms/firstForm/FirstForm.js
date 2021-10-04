@@ -34,7 +34,7 @@ function FirstForm({ title, author, address, updateTitle, updateAuthor, updateAd
         />
       </div>
       <div>
-        <Button type="submit" size="large" color="secondary">
+        <Button type="submit" size="large" color="primary">
           Next 2/3
         </Button>
       </div>
