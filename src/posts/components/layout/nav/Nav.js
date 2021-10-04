@@ -10,9 +10,7 @@ function Nav({ content, setContent }) {
     setContent(nextContent);
   };
 
-  const handleHeaderClick = () => {
-    if (content !== "list") setContent("list");
-  };
+  const handleHeaderClick = () => setContent("list");
 
   const getBtnTxt = () => {
     switch(content) {
@@ -27,7 +25,10 @@ function Nav({ content, setContent }) {
 
   return (
     <nav className={classes.root}>
-      <Header onClick={handleHeaderClick} styles={{ fontSize: "18px" }}>
+      <Header 
+        onClick={content === "list" ? null : handleHeaderClick} 
+        styles={{ fontSize: "18px" }}
+      >
         Posts
       </Header>
       <Button onClick={handleBtnClick}>
