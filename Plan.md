@@ -1,4 +1,5 @@
-Crate a module
+Basic:
+  Module
   -> adds posts to the application
     -> form
       -> required: title, author, address, description, image
@@ -14,18 +15,16 @@ Bonus
  -> edit & delete posts
  -> local storage
  -> custom hooks
- -> search posts
+ -> search posts (by author / title)
  -> multipage form
  -> loading animation
+ -> cloudinary picture upload
 
  
- Left to do:
+ Left:
   -> reduce img size on upload
-  -> delete uploaded img when post is deleted / img replaced
-  -> finish styling
-
-
-Additional plans:
+  -> delete uploaded img from cloudinary when post is deleted / img replaced
+  -> perfect styling
   -> pagination
   -> line animation below multi page form
   -> dark mode with context
