@@ -38,8 +38,8 @@ function Posts({ posts, setPosts }) {
   };
 
   const update = (id, newPost) => {
-    const p = posts.map(post => post.id === id ? newPost : post);
-    setPosts(p);
+    const otherPosts = posts.filter(post => post.id !== id);
+    setPosts([newPost,...otherPosts]);
     setContent("list");
   };
 
