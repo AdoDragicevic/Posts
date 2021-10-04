@@ -1,6 +1,6 @@
 import { getDateStr } from "../../helpers/date";
 
-import FormsContainer from "../form/formsContainer/FormsContainer";
+import FormsController from "../form/formsController/FormsController";
 
 
 function Edit({ post, updatePost }) {
@@ -11,7 +11,7 @@ function Edit({ post, updatePost }) {
   };
 
   return (
-    <FormsContainer 
+    <FormsController 
       header="Edit post"
       post={post}
       submit={submit} 

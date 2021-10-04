@@ -11,9 +11,9 @@ import LoadingAnimation from "../../UI/loadingAnimation/LoadingAnimation";
 
 import { uploadImage } from "../../../helpers/cloudinary";
 
-import classes from "./FormsContainer.module.css";
+import classes from "./FormsController.module.css";
 
-function FormsContainer({ header, post, submit }) {
+function FormsController({ header, post, submit }) {
   
   const [formPage, incrementFormPage, decrementFormPage] = useIncrementState();
 
@@ -89,4 +89,4 @@ function FormsContainer({ header, post, submit }) {
 
 };
 
-export default FormsContainer;  
+export default FormsController;  
