@@ -50,7 +50,7 @@ function SecondForm({ img, setImg, resetImg, goBack, submit }) {
           onClick={resetImg}
           isHidden={!img}
         >
-          Reset
+          Remove
         </Button>
       </div>
 
