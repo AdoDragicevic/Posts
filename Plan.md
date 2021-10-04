@@ -22,6 +22,8 @@ Bonus
 
  
  Left:
+  -> complete form refactor
+  -> optimization (e.g. memo)
   -> reduce img size on upload
   -> delete uploaded img from cloudinary when post is deleted / img replaced
   -> perfect styling
