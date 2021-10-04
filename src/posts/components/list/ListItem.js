@@ -3,9 +3,14 @@ import classes from "./ListItem.module.css";
 function ListItem({ img, title, address, author, id, show }) {
   return (
     <li className={classes.root} onClick={ () => show(id) }>
-      <h4>{title}</h4>
-      <h6>{author}</h6>
-      <p>{address}</p>
+      <h2 className={classes.title}>{title}</h2>
+      <img className={classes.img} src={img} />
+      <div className={classes.info}>
+        
+        <p className={classes.author}>{author}</p>
+        <p className={classes.address}>{address}</p>
+      </div>
+      
       <div className={classes.line} />
     </li>
   )

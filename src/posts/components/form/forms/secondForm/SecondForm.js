@@ -50,6 +50,7 @@ function SecondForm({ img, setImg, resetImg, goBack, submit }) {
           size="small" 
           color="danger" 
           onClick={resetImg}
+          isHidden={!img}
         >
           Reset
         </Button>
@@ -65,6 +66,7 @@ function SecondForm({ img, setImg, resetImg, goBack, submit }) {
           type="submit" 
           size="large" 
           color="secondary"
+          onClick={submit}
         >
           Next 3/3
         </Button>
