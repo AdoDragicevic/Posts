@@ -25,7 +25,7 @@ const seedData = [
     address: "otacon@rex.com",
     description: loremIpsum,
     img: "https://res.cloudinary.com/dggbkwj5l/image/upload/v1633337767/adodragi/p25iebecg1at6wkrgbjx.jpg",
-    id: "3b6fcbc-73c5-818-6573-efc6c48cbb15",
+    id: "4c6fcbc-83c1-817-c573-efc6f48cbb15",
     date: "1.10.2021."
   }
 ];
