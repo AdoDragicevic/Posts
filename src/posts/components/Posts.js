@@ -11,7 +11,7 @@ import classes from "./Posts.module.css";
 
 function Posts({ posts, setPosts }) {
   
-  const [content, setContent] = useState("new");
+  const [content, setContent] = useState("list");
   const [shownPost, setShownPost] = useState(null);
 
   const addPost = newPost => {
