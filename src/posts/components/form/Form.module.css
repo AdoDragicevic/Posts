@@ -1,5 +1,22 @@
 .root {
+  border: 1px solid red;
   width: 100%;
-  max-width: 400px;
-  margin: 5vh auto;
+  max-width: 650px;
+  margin: 2rem auto;
+  height: 400px;
+}
+
+.header {
+  border: 1px solid yellowgreen;
+  height: 50px;
+}
+
+.body {
+  background-color: tomato;
+  height: 300px;
+}
+
+.footer {
+  border: 1px solid yellowgreen;
+  height: 50px;
 }

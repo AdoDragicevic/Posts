@@ -1,6 +1,8 @@
 import { getDateStr } from "../../helpers/date";
 
-import FormsController from "../form/formsController/FormsController";
+import Header from "../UI/header/Header";
+
+import Form from "../form/Form";
 
 
 function Edit({ post, updatePost }) {
@@ -11,11 +13,10 @@ function Edit({ post, updatePost }) {
   };
 
   return (
-    <FormsController 
-      header="Edit post"
-      post={post}
-      submit={submit} 
-    />
+    <>
+      <Header>Edit post</Header>
+      <Form post={post} submit={submit} />
+    </>
   )
 
 };
