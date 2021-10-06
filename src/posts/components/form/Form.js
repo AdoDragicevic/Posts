@@ -10,6 +10,8 @@ import ImgUploader from "./formContent/imgUploader/ImgUploader";
 import Textarea from "./formContent/textarea/Textarea";
 import LoadingAnimation from "../UI/loadingAnimation/LoadingAnimation";
 
+import { uploadImage } from "../../helpers/cloudinary";
+
 import classes from "./Form.module.css";
 
 
@@ -22,10 +24,7 @@ function Form({ post, submit }) {
   const [author, updateAuthor] = useInputState(post ? post.author : "");
   const [address, updateAddress] = useInputState(post ? post.address : "");
   const [description, updateDescription] = useInputState(post ? post.description : "");
-  const [img, setImg] = useState({ 
-    url: post ? post.img : null, 
-    preview: post ? post.img : null
-  });
+  const [img, setImg] = useState({ files: null, url: post ? post.img : null });
 
   const content = [
     <Inputs 
@@ -40,10 +39,11 @@ function Form({ post, submit }) {
     <Textarea name="description" value={description} onChange={updateDescription} />
   ];
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setIsLoading(true);
-    
-    const inputVals = { title, author, address, description };
+    const imgURL = img.url === post.img ? img.url : await uploadImage(img.files);
+    setIsLoading(false);
+    const inputVals = { title, author, address, description, img: imgURL };
     submit(inputVals);
   };
 

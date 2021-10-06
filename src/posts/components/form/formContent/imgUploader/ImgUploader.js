@@ -4,15 +4,15 @@ function ImgUploader({ img, onChange }) {
   
   const handleChange = e => {
     onChange({
-      url: e.target.files,
-      preview: URL.createObjectURL(e.target.files[0])
+      files: e.target.files,
+      url: URL.createObjectURL(e.target.files[0])
     });
   };
 
   return (
     <div>
       <input type="file" onChange={handleChange} />
-      <img src={img.preview} />
+      <img src={img.url} />
     </div>
   )
 };

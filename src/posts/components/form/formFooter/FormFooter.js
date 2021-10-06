@@ -3,7 +3,7 @@ import Button from "../../UI/button/Button";
 import classes from "./FormFooter.module.css";
 
 function FormFooter({ page, back, next, submit }) {
-  
+
   const handleClick = e => {
     e.preventDefault();
     page === 2 ? submit() : next();
