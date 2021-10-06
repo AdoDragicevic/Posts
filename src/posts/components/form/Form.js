@@ -6,6 +6,7 @@ import useStateWithReset from "../../hooks/useStateWithReset";
 import FormHeader from "./formHeader/FormHeader";
 import FormFooter from "./formFooter/FormFooter";
 import Inputs from "./formContent/inputs/Inputs";
+import ImgUploader from "./formContent/imgUploader/ImgUploader";
 import Textarea from "./formContent/textarea/Textarea";
 import LoadingAnimation from "../UI/loadingAnimation/LoadingAnimation";
 
@@ -21,6 +22,10 @@ function Form({ post, submit }) {
   const [author, updateAuthor] = useInputState(post ? post.author : "");
   const [address, updateAddress] = useInputState(post ? post.address : "");
   const [description, updateDescription] = useInputState(post ? post.description : "");
+  const [img, setImg] = useState({ 
+    url: post ? post.img : null, 
+    preview: post ? post.img : null
+  });
 
   const content = [
     <Inputs 
@@ -31,20 +36,13 @@ function Form({ post, submit }) {
       address={address}
       updateAddress={updateAddress}
     />,
-    <Textarea
-      name="description"
-      value={description}
-      onChange={updateDescription}
-    />,
-    <Textarea
-      name="description"
-      value={description}
-      onChange={updateDescription}
-    />
+    <ImgUploader img={img} onChange={setImg} />,
+    <Textarea name="description" value={description} onChange={updateDescription} />
   ];
 
   const handleSubmit = () => {
-    // set loading
+    setIsLoading(true);
+    
     const inputVals = { title, author, address, description };
     submit(inputVals);
   };
