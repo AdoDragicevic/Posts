@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import useInputState from "../../hooks/useInputState";
 import useIncrementState from "../../hooks/useIncrementState";
-import useStateWithReset from "../../hooks/useStateWithReset";
 
 import FormHeader from "./formHeader/FormHeader";
 import FormFooter from "./formFooter/FormFooter";
@@ -26,6 +25,7 @@ function Form({ post, submit }) {
   const [description, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
 
+
   const content = [
     <Inputs 
       title={title}
@@ -39,7 +39,9 @@ function Form({ post, submit }) {
     <Textarea name="description" value={description} onChange={updateDescription} />
   ];
 
-  const handleSubmit = async () => {
+  const handleSubmit = async e => {
+    e.preventDefault();
+    if (page !== 2) return nextPage();
     setIsLoading(true);
     const imgURL = img.url === post.img ? img.url : await uploadImage(img.files);
     setIsLoading(false);
@@ -56,7 +58,11 @@ function Form({ post, submit }) {
       <div className={classes.body}> 
         {content[page]}
       </div>
-      <FormFooter page={page} back={previousPage} next={nextPage} submit={handleSubmit} />
+      <FormFooter 
+        page={page} 
+        back={previousPage} 
+        next={handleSubmit}
+      />
     </form>
   )
 };

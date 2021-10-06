@@ -15,7 +15,7 @@ function Button({ children, type, styles, size, color, isHidden, isDisabled, onC
       onClick={onClick} 
       style={styles}
       hidden={isHidden}
-      disabled={isDisabled}
+      hidden={isDisabled}
     >
       {children}
     </button>
