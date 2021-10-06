@@ -9,7 +9,6 @@ import FormPageOne from "./formPages/formPageOne/FormPageOne";
 import FormPageTwo from "./formPages/formPageTwo/FormPageTwo";
 import FormPageThree from "./formPages/formPageThree/FormPageThree";
 import LoadingAnimation from "../UI/loadingAnimation/LoadingAnimation";
-import Input from "./input/Input";
 
 import classes from "./Form.module.css";
 
@@ -33,7 +32,9 @@ function Form({ post, submit }) {
       address={address}
       updateAddress={updateAddress}
     />,
-    <FormPageTwo />,
+    <FormPageTwo 
+
+    />,
     <FormPageThree
       description={description}
       updateDescription={updateDescription}
