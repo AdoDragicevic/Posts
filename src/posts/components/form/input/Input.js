@@ -1,6 +1,6 @@
 import classes from "./Input.module.css";
 
-function Input({ name, type, value, onChange, placeholder, isRequired }) {
+function Input({ type, name, value, onChange, placeholder, isRequired }) {
   return (
     <div className={classes.root}>
       <label className={classes.label} htmlFor={name}>{name}</label>

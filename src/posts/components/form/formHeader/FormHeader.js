@@ -4,18 +4,20 @@ function FormHeader({ page }) {
 
   const getMsg = () => {
     switch(page) {
+      case 0:
+        return "1/3 Post data";
       case 1:
-        return "Personal data";
+        return "2/3 Post image";
       case 2:
-        return "Image";
-      case 3:
-        return "Content";
+        return "3/3 Post content";
     };
   };
 
   return (
     <div className={classes.root}>
-      <h3 className={classes.msg}>{getMsg()}</h3>
+      <h3 className={classes.msg}>
+        {getMsg()}
+      </h3>
     </div>
   )
 };

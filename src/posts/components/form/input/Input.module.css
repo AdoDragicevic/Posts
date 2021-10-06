@@ -17,12 +17,13 @@
 .input {
   box-sizing: border-box;
   height: 45px;
-  line-height: 45px;
-  font-size: 1.3rem;
+  padding-top: 2px;
+  font-size: 1.1rem;
   padding-left: 1rem;
   border-radius: 1px;
   outline: none;
   border: none;
+  border: 2px solid transparent; 
   border-bottom: 1px solid #227C9D;
   margin: .5rem 0 1.5rem 0;
   transition: all .2s ease-in;

@@ -6,12 +6,12 @@ function FormFooter({ page, back, next, submit }) {
   
   const handleClick = e => {
     e.preventDefault();
-    page === 3 ? submit() : next();
+    page === 2 ? submit() : next();
   };
   
   return (
     <div className={classes.root}>
-      {page !== 1 && (
+      {page !== 0 && (
         <div className={classes.back} onClick={back}>&#8592;</div>
       )}
       <Button
@@ -20,7 +20,7 @@ function FormFooter({ page, back, next, submit }) {
         color="primary"
         onClick={handleClick}
       >
-        {page === 3 ? "Submit" : "Next"}
+        {page === 2 ? "Submit" : "Next"}
       </Button>
     </div>
   )

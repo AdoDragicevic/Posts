@@ -1,11 +1,9 @@
 .root {
-  border: 1px solid red;
   width: 100%;
   max-width: 650px;
   margin: 2rem auto;
 }
 
 .body {
-  background-color: tomato;
   height: 300px;
 }
