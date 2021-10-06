@@ -5,9 +5,8 @@ import useStateWithReset from "../../hooks/useStateWithReset";
 
 import FormHeader from "./formHeader/FormHeader";
 import FormFooter from "./formFooter/FormFooter";
-import FormPageOne from "./formPages/formPageOne/FormPageOne";
-import FormPageTwo from "./formPages/formPageTwo/FormPageTwo";
-import FormPageThree from "./formPages/formPageThree/FormPageThree";
+import InputsGroup from "./inputsGroup/InputsGroup";
+import Textarea from "./textarea/Textarea";
 import LoadingAnimation from "../UI/loadingAnimation/LoadingAnimation";
 
 import classes from "./Form.module.css";
@@ -24,7 +23,7 @@ function Form({ post, submit }) {
   const [description, updateDescription] = useInputState(post ? post.description : "");
 
   const content = [
-    <FormPageOne 
+    <InputsGroup 
       title={title}
       updateTitle={updateTitle}
       author={author}
@@ -32,12 +31,10 @@ function Form({ post, submit }) {
       address={address}
       updateAddress={updateAddress}
     />,
-    <FormPageTwo 
-
-    />,
-    <FormPageThree
-      description={description}
-      updateDescription={updateDescription}
+    <Textarea
+      name="description"
+      value={description}
+      onChange={updateDescription}
     />
   ];
 

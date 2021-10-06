@@ -1,8 +1,8 @@
 import Input from "../../input/Input";
 
-import classes from "./FormPageOne.module.css";
+import "./InputsBox.modal.css";
 
-function FormPageOne({ title, updateTitle, author, updateAuthor, address, updateAddress }) {
+function InputsGroup({ title, updateTitle, author, updateAuthor, address, updateAddress }) {
   return (
     <>
       <Input 
@@ -30,4 +30,4 @@ function FormPageOne({ title, updateTitle, author, updateAuthor, address, update
   )
 };
 
-export default FormPageOne;
+export default InputsGroup;
