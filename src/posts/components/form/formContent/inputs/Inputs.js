@@ -1,6 +1,6 @@
-import Input from "../input/Input";
+import Input from "./input/Input";
 
-import "./InputsGroup.module.css";
+import "./Inputs.module.css";
 
 function InputsGroup({ title, updateTitle, author, updateAuthor, address, updateAddress }) {
   return (

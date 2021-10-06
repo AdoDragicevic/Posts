@@ -1,6 +1,7 @@
 import uuid from "react-uuid";
 
-import FormsController from "../form/formsController/FormsController";
+import Header from "../UI/header/Header";
+import Form from "../form/Form";
 
 import { getDateStr } from "../../helpers/date";
 
@@ -15,7 +16,12 @@ function New({ addPost }) {
     addPost(newInput);
   };
 
-  return <FormsController header="Add new post" submit={submit} />
+  return (
+    <>
+      <Header>Add new post</Header>
+      <Form submit={submit} />
+    </>
+  )
 };
 
 export default New;

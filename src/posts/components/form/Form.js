@@ -5,8 +5,8 @@ import useStateWithReset from "../../hooks/useStateWithReset";
 
 import FormHeader from "./formHeader/FormHeader";
 import FormFooter from "./formFooter/FormFooter";
-import InputsGroup from "./inputsGroup/InputsGroup";
-import Textarea from "./textarea/Textarea";
+import Inputs from "./formContent/inputs/Inputs";
+import Textarea from "./formContent/textarea/Textarea";
 import LoadingAnimation from "../UI/loadingAnimation/LoadingAnimation";
 
 import classes from "./Form.module.css";
@@ -23,7 +23,7 @@ function Form({ post, submit }) {
   const [description, updateDescription] = useInputState(post ? post.description : "");
 
   const content = [
-    <InputsGroup 
+    <Inputs 
       title={title}
       updateTitle={updateTitle}
       author={author}
