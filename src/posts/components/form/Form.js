@@ -59,7 +59,7 @@ function Form({ post, submit }) {
         {content[page]}
       </div>
       <FormFooter 
-        page={page} 
+        page={page}
         back={previousPage} 
         next={handleSubmit}
       />
