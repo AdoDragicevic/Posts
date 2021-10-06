@@ -35,6 +35,11 @@ function Form({ post, submit }) {
       name="description"
       value={description}
       onChange={updateDescription}
+    />,
+    <Textarea
+      name="description"
+      value={description}
+      onChange={updateDescription}
     />
   ];
 
