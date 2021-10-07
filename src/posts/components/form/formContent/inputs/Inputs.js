@@ -15,7 +15,6 @@ function InputsGroup({ title, updateTitle, author, updateAuthor, address, update
         value={title}
         onChange={updateTitle}
         placeholder="My first post"
-        autoFocus={true}
         icon={ <BsPencil /> }
       />
       <Input 

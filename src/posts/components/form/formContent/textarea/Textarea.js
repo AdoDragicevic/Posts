@@ -1,6 +1,6 @@
 import classes from "./Textarea.module.css";
 
-function Textarea({ name, value, onChange, isRequired }) {
+function Textarea({ name, value, onChange }) {
   return (
     <div className={classes.root}>
       <label className={classes.label} htmlFor={name}>
@@ -12,7 +12,6 @@ function Textarea({ name, value, onChange, isRequired }) {
         name={name}
         value={value}
         onChange={onChange}
-        required={isRequired} 
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import useInputState from "../../hooks/useInputState";
 import useIncrementState from "../../hooks/useIncrementState";
 
@@ -10,6 +10,7 @@ import Textarea from "./formContent/textarea/Textarea";
 import LoadingAnimation from "../UI/loadingAnimation/LoadingAnimation";
 
 import { uploadImage } from "../../helpers/cloudinary";
+import { isValidEmail } from "../../helpers/formValidations";
 
 import classes from "./Form.module.css";
 
@@ -24,7 +25,28 @@ function Form({ post, submit }) {
   const [address, updateAddress] = useInputState(post ? post.address : "");
   const [description, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
+  const [focus, setFocus] = useState("");
 
+  useEffect( () => {
+    if (focus) {
+      let el = document.querySelector(`#${focus}`);
+      if (el) el.focus();
+    }
+  }, [focus]);
+
+  const validation = () => {
+    if (page === 0) {
+      if (!title) setFocus("title");
+      else if (!author) setFocus("author");
+      else if ( !isValidEmail(address) ) setFocus("address");
+      else return true;
+    }
+    else if (page === 1) return img.url;
+    else if (page === 2) {
+      setFocus("description");
+      return description;
+    } 
+  };
 
   const content = [
     <Inputs 
@@ -41,9 +63,10 @@ function Form({ post, submit }) {
 
   const handleSubmit = async e => {
     e.preventDefault();
+    if (!validation()) return;
     if (page !== 2) return nextPage();
     setIsLoading(true);
-    const imgURL = img.url === post.img ? img.url : await uploadImage(img.files);
+    const imgURL = (post && post.img === img.url) ? img.url : await uploadImage(img.files);
     setIsLoading(false);
     const inputVals = { title, author, address, description, img: imgURL };
     submit(inputVals);
