@@ -1,6 +1,8 @@
+
+
 import classes from "./Input.module.css";
 
-function Input({ type, name, value, onChange, placeholder, isRequired, autoFocus }) {
+function Input({ type, name, value, onChange, placeholder, isRequired, autoFocus, icon }) {
   return (
     <div className={classes.root}>
       <label className={classes.label} htmlFor={name}>{name}</label>
@@ -16,6 +18,9 @@ function Input({ type, name, value, onChange, placeholder, isRequired, autoFocus
         required={isRequired}
         maxLength={75}
       />
+      <i className={classes.icon}>
+        {icon}
+      </i>
     </div>
   );
 };
