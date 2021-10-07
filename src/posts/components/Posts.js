@@ -48,7 +48,7 @@ function Posts({ posts, setPosts }) {
       case "list":
         return <Search openPost={openPost} posts={posts} />
       case "show":
-        return <Show post={shownPost} deletePost={deletePost} openEdit={openEdit} />;
+        return <Show post={shownPost} setContent={setContent} deletePost={deletePost} editPost={openEdit} />;
       case "new":
         return <New addPost={addPost} setContent={setContent} />;
       case "edit":

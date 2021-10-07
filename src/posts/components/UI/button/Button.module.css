@@ -57,6 +57,7 @@
 
 .secondary {
   background-color: #227C9D;
+  color: #FEFCFB;
 }
 
 .alert {
@@ -66,5 +67,5 @@
 
 .danger {
   background-color: #DA4167;
-  color: white;
+  color: #FEFCFB;
 }

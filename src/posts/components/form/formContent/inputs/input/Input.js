@@ -1,5 +1,3 @@
-
-
 import classes from "./Input.module.css";
 
 function Input({ type, name, value, onChange, placeholder, isRequired, autoFocus, icon }) {
