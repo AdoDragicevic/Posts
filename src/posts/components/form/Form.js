@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useInputState from "../../hooks/useInputState";
 import useIncrementState from "../../hooks/useIncrementState";
+import useFocusState from "../../hooks/useFocusState";
 
 import FormHeader from "./formHeader/FormHeader";
 import FormFooter from "./formFooter/FormFooter";
@@ -25,18 +26,9 @@ function Form({ post, submit }) {
   const [address, updateAddress] = useInputState(post ? post.address : "");
   const [description, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
-  const [focus, setFocus] = useState("");
-
-  useEffect( () => {
-    if (focus) {
-      let el = document.querySelector(`#${focus}`);
-      if (el) el.focus();
-    }
-    setFocus("");
-  }, [focus]);
+  const [focus, setFocus] = useFocusState("");
 
   const validation = () => {
-    console.log("validation")
     if (page === 0) {
       if (!title) setFocus("title");
       else if (!author) setFocus("author");
@@ -83,11 +75,7 @@ function Form({ post, submit }) {
       <div className={classes.body}> 
         {content[page]}
       </div>
-      <FormFooter 
-        page={page}
-        back={previousPage} 
-        next={handleSubmit}
-      />
+      <FormFooter page={page} back={previousPage} next={handleSubmit} />
     </form>
   )
 };
