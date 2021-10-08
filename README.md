@@ -4,7 +4,7 @@
 
 ### Visit it on Netlify
 
-https://fervent-thompson-935581.netlify.app/
+https://elated-wozniak-ea457e.netlify.app/
 
 ### Functionalities
 * add / edit / delete post
