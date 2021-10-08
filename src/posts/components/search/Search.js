@@ -9,10 +9,12 @@ import List from "../list/List";
 import classes from "./Search.module.css";
 
 function Search({ posts, openPost }) {
+  
   const [query, updateQuery] = useInputState("");
   const [criteria, switchCriteria] = useSwitchBetweenState("title", "author");
 
   const results = findBy(posts, query, criteria);
+  
   
   return (
     <div className={classes.root}>
