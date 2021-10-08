@@ -26,9 +26,11 @@ function Form({ post, submit }) {
   const [address, updateAddress] = useInputState(post ? post.address : "");
   const [description, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
+  
   const [focus, setFocus] = useFocusState("");
 
-  const validation = (page, title, author, address, img, description) => {
+
+  const validation = () => {
     if (page === 0) {
       if (!title) setFocus("title");
       else if (!author) setFocus("author");
@@ -41,6 +43,7 @@ function Form({ post, submit }) {
       return description;
     }
   };
+
 
   const content = [
     <Inputs 
@@ -55,10 +58,14 @@ function Form({ post, submit }) {
     <Textarea name="description" value={description} onChange={updateDescription} />
   ];
 
-  const handleSubmit = async e => {
+  const handleNextPage = e => {
     e.preventDefault();
     if (!validation()) return;
-    if (page !== 2) return nextPage();
+    page === 2 ? submitForm() : nextPage();
+  };
+
+
+  const submitForm = async () => {
     setIsLoading(true);
     const imgURL = (post && post.img === img.url) ? img.url : await uploadImage(img.files);
     setIsLoading(false);
@@ -66,6 +73,7 @@ function Form({ post, submit }) {
     submit(inputVals);
   };
 
+  
 
   if (isLoading) return <LoadingAnimation msg="Saving..." />;
 
@@ -75,7 +83,7 @@ function Form({ post, submit }) {
       <div className={classes.body}> 
         {content[page]}
       </div>
-      <FormFooter page={page} back={previousPage} next={handleSubmit} />
+      <FormFooter page={page} back={previousPage} next={handleNextPage} />
     </form>
   )
 };
