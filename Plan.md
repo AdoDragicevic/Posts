@@ -23,6 +23,8 @@ Bonus
 
  
  Left:
+  -> refactor from module to single page application
+  -> add gallery module - connect posts to galleries
   -> optimization (e.g. memo)
   -> reduce img size on upload
   -> delete uploaded img from cloudinary when post is deleted / img replaced
