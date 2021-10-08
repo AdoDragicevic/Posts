@@ -1,8 +1,7 @@
-import { IoChevronBackSharp } from "react-icons/io5";
-
 import Header from "../UI/header/Header";
 import PostData from "./postData/PostData";
-import Button from "../UI/button/Button";
+import PostContent from "./postContent/PostContent";
+import ImgBox from "../UI/imgBox/ImgBox";
 
 import classes from "./Show.module.css";
 
@@ -10,26 +9,15 @@ function Show({ post, setContent, deletePost, editPost }) {
   
   const { title, description, img } = post;
 
-  const handleBack = () => setContent("list");
+  const goBack = () => setContent("list");
+
 
   return (
     <div className={classes.root}>
       <Header>{title}</Header>
-      <div className={classes.imgBox}>
-        <img className={classes.img} src={img} alt="Post" />
-      </div>
+      <ImgBox url={img} />
       <PostData post={post} editPost={editPost} deletePost={deletePost} />
-      <div className={classes.content}>
-        {description}
-      </div>
-      <Button
-          type="button"
-          size="round"
-          color="primary"
-          onClick={handleBack}
-        >
-          <IoChevronBackSharp />
-      </Button>
+      <PostContent description={description} back={goBack} />
     </div>
   )
 };
