@@ -32,9 +32,11 @@ function Form({ post, submit }) {
       let el = document.querySelector(`#${focus}`);
       if (el) el.focus();
     }
+    setFocus("");
   }, [focus]);
 
   const validation = () => {
+    console.log("validation")
     if (page === 0) {
       if (!title) setFocus("title");
       else if (!author) setFocus("author");
@@ -45,7 +47,7 @@ function Form({ post, submit }) {
     else if (page === 2) {
       setFocus("description");
       return description;
-    } 
+    }
   };
 
   const content = [
