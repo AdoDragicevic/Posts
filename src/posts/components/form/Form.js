@@ -27,19 +27,19 @@ function Form({ post, submit }) {
   const [description, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
   
-  const [focus, setFocus] = useFocusState("");
+  const [focusedInput, setFocusedInput] = useFocusState("");
 
 
   const validation = () => {
     if (page === 0) {
-      if (!title) setFocus("title");
-      else if (!author) setFocus("author");
-      else if ( !isValidEmail(address) ) setFocus("address");
+      if (!title) setFocusedInput("title");
+      else if (!author) setFocusedInput("author");
+      else if ( !isValidEmail(address) ) setFocusedInput("address");
       else return true;
     }
     else if (page === 1) return img.url;
     else if (page === 2) {
-      setFocus("description");
+      setFocusedInput("description");
       return description;
     }
   };
@@ -73,7 +73,7 @@ function Form({ post, submit }) {
     submit(inputVals);
   };
 
-  
+
 
   if (isLoading) return <LoadingAnimation msg="Saving..." />;
 
