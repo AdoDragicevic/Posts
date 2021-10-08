@@ -10,9 +10,9 @@ import classes from "./Search.module.css";
 
 function Search({ posts, openPost }) {
   const [query, updateQuery] = useInputState("");
-  const [mode, switchMode] = useSwitchBetweenState("title", "author");
+  const [criteria, switchCriteria] = useSwitchBetweenState("title", "author");
 
-  const results = findBy(posts, query, mode);
+  const results = findBy(posts, query, criteria);
   
   return (
     <div className={classes.root}>
@@ -20,8 +20,8 @@ function Search({ posts, openPost }) {
       <SearchInput
         onChange={updateQuery}
         nOfResults={results.length}
-        mode={mode}
-        switchMode={switchMode} 
+        criteria={criteria}
+        switchCriteria={switchCriteria} 
       />
       <List posts={results} openPost={openPost} />
     </div>
