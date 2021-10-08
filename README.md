@@ -15,6 +15,7 @@ https://fervent-thompson-935581.netlify.app/
 * multipage form
 * custom form validation
 * uploaded images are displayed, but only sent to Cloudinary on the submission of the entire form
+* modal confirmation before deleting post
 * local storage
 * responsive design
 * loading animation
