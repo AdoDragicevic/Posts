@@ -4,7 +4,7 @@
 
 ### Visit it on Netlify
 
-https://posts-ado.netlify.app/
+https://fervent-thompson-935581.netlify.app/
 
 ### Functionalities
 * add / edit / delete post
