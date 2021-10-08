@@ -17,7 +17,7 @@ function Show({ post, setContent, deletePost, editPost }) {
       <Header>{title}</Header>
       <ImgBox url={img} />
       <PostData post={post} editPost={editPost} deletePost={deletePost} />
-      <PostContent description={description} back={goBack} />
+      <PostContent description={description} goBack={goBack} />
     </div>
   )
 };
