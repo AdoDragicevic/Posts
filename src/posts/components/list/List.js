@@ -1,4 +1,4 @@
-import ListItem from "./ListItem";
+import ListItem from "./listItem/ListItem";
 
 import classes from "./List.module.css";
 

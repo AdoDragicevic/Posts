@@ -9,9 +9,12 @@ function Show({ post, setContent, deletePost, editPost }) {
   
   const { title, author, address, description, img, date, id } = post;
 
+
+  
   const handleDelete = () => deletePost(id);
   const handleEdit = () => editPost(id);
   const handleBack = () => setContent("list");
+
 
   return (
     <div className={classes.root}>
