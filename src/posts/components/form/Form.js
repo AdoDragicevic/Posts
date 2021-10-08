@@ -42,7 +42,7 @@ function Form({ post, submit }) {
     <Textarea name="description" value={description} onChange={updateDescription} />
   ];
 
-  
+
   const handleNextPage = e => {
     e.preventDefault();
     const inputVals = { title, author, address, description, img };

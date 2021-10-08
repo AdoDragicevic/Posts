@@ -5,11 +5,11 @@ import Modal from "../../UI/modal/Modal";
 
 import classes from "./PostData.module.css";
 
-function PostData({ post, editPost, deletePost, id }) {
+function PostData({ post, editPost, deletePost }) {
 
   const [isModal, toggleIsModal] = useToggleState(false);
 
-  const { author, date, address } = post;
+  const { author, date, address, id } = post;
 
   const handleEdit = () => editPost(id);
   const handleDelete = () => deletePost(id);
