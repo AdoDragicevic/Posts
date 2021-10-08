@@ -1,38 +1,29 @@
 import { findBy } from "../../helpers/search";
-import { useState } from "react";
-import useToggleState from "../../hooks/useToggleState";
+import useSwitchBetweenState from "../../hooks/useSwitchBetweenState";
+import useInputState from "../../hooks/useInputState";
 
 import Header from "../UI/header/Header";
+import SearchInput from "./searchInput/SearchInput";
 import List from "../list/List";
 
 import classes from "./Search.module.css";
 
 function Search({ posts, openPost }) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [isSearchByTitle, toggleIsSearchByTitle] = useToggleState();
-  
-  const handleInputChange = e => setSearchTerm(e.target.value);
+  const [query, updateQuery] = useInputState("");
+  const [mode, switchMode] = useSwitchBetweenState("title", "author");
 
-  const search = () => {
-    const key = isSearchByTitle ? "title" : "author";
-    return findBy(posts, searchTerm, key);
-  };
+  const results = findBy(posts, query, mode);
   
   return (
     <div className={classes.root}>
       <Header>Posts</Header>
-      <div className={classes.searchContent}>
-        <button className={classes.btn} onClick={toggleIsSearchByTitle}>
-          {`Searching by ${isSearchByTitle ? "title" : "author"}`}
-        </button>
-        <input
-          className={classes.input}
-          type="text" 
-          placeholder="Search..." 
-          onChange={handleInputChange} 
-        />
-      </div>
-      <List posts={search()} openPost={openPost} />
+      <SearchInput
+        onChange={updateQuery}
+        nOfResults={results.length}
+        mode={mode}
+        switchMode={switchMode} 
+      />
+      <List posts={results} openPost={openPost} />
     </div>
   )
 };
