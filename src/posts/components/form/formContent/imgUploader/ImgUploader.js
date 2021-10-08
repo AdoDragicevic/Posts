@@ -1,6 +1,12 @@
+import { useRef } from "react";
+import Button from "../../../UI/button/Button";
+
 import classes from "./ImgUploader.module.css";
 
 function ImgUploader({ img, onChange }) {
+
+  const input = useRef();
+
 
   const handleChange = e => {
     const files = e.target.files;
@@ -9,9 +15,20 @@ function ImgUploader({ img, onChange }) {
   };
 
   return (
-    <div>
-      <input type="file" accept="image/*" onChange={handleChange} />
-      <img src={img.url} />
+    <div className={classes.root}>
+      <Button
+        type="button"
+        color="alert"
+        size="small"
+        onClick={() => input.current.click()}
+      >
+        Upload
+      </Button>
+      <input type="file" accept="image/*" onChange={handleChange} ref={input} hidden/>
+      <div className={classes.imgBox}>
+        <img className={classes.img} src={img.url} alt={img.url ? "Uploaded" : null} />
+      </div>
+      
     </div>
   )
 };
