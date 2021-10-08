@@ -11,7 +11,7 @@ import Textarea from "./formContent/textarea/Textarea";
 import LoadingAnimation from "../UI/loadingAnimation/LoadingAnimation";
 
 import { uploadImage } from "../../helpers/cloudinary";
-import { isValidEmail } from "../../helpers/formValidations";
+import { validation } from "../../helpers/formValidations";
 
 import classes from "./Form.module.css";
 
@@ -20,29 +20,13 @@ function Form({ post, submit }) {
 
   const [page, nextPage, previousPage] = useIncrementState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [focusedInput, setFocusedInput] = useFocusState(null);
 
   const [title, updateTitle] = useInputState(post ? post.title : "");
   const [author, updateAuthor] = useInputState(post ? post.author : "");
   const [address, updateAddress] = useInputState(post ? post.address : "");
   const [description, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
-  
-  const [focusedInput, setFocusedInput] = useFocusState("");
-
-
-  const validation = () => {
-    if (page === 0) {
-      if (!title) setFocusedInput("title");
-      else if (!author) setFocusedInput("author");
-      else if ( !isValidEmail(address) ) setFocusedInput("address");
-      else return true;
-    }
-    else if (page === 1) return img.url;
-    else if (page === 2) {
-      setFocusedInput("description");
-      return description;
-    }
-  };
 
 
   const content = [
@@ -58,18 +42,19 @@ function Form({ post, submit }) {
     <Textarea name="description" value={description} onChange={updateDescription} />
   ];
 
+  
   const handleNextPage = e => {
     e.preventDefault();
-    if (!validation()) return;
-    page === 2 ? submitForm() : nextPage();
+    const inputVals = { title, author, address, description, img };
+    if (!validation(page, inputVals, setFocusedInput)) return;
+    page === 2 ? submitForm(inputVals) : nextPage();
   };
 
 
-  const submitForm = async () => {
+  const submitForm = async inputVals => {
     setIsLoading(true);
-    const imgURL = (post && post.img === img.url) ? img.url : await uploadImage(img.files);
+    inputVals.img = (post && post.img === img.url) ? img.url : await uploadImage(img.files);
     setIsLoading(false);
-    const inputVals = { title, author, address, description, img: imgURL };
     submit(inputVals);
   };
 
