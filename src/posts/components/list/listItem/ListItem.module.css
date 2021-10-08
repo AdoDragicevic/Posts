@@ -8,10 +8,6 @@
   transition: all .2s ease-in;
 }
 
-.root:hover .imgBox {
-  transform: scale(.98);
-}
-
 .imgBox {
   width: 100%;
   height: 250px;
