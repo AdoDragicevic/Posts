@@ -28,7 +28,7 @@ function Form({ post, submit }) {
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
   const [focus, setFocus] = useFocusState("");
 
-  const validation = () => {
+  const validation = (page, title, author, address, img, description) => {
     if (page === 0) {
       if (!title) setFocus("title");
       else if (!author) setFocus("author");

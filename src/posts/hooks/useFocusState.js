@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 const useFocusState = (initVal = null) => {
   const [focus, setFocus] = useState(initVal);
   useEffect( () => {
