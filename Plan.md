@@ -17,12 +17,12 @@ Bonus
  -> custom hooks
  -> search posts (by author / title)
  -> multipage form
+ -> custom form validation
  -> loading animation
  -> cloudinary picture upload
 
  
  Left:
-  -> complete form refactor
   -> optimization (e.g. memo)
   -> reduce img size on upload
   -> delete uploaded img from cloudinary when post is deleted / img replaced

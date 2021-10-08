@@ -13,6 +13,7 @@ https://posts-ado.netlify.app/
 * show individual post
 * Cloudinary picture upload
 * multipage form
+* custom form validation
 * uploaded images are displayed, but only sent to Cloudinary on the submission of the entire form
 * local storage
 * responsive design
