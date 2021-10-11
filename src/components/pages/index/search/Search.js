@@ -1,14 +1,13 @@
-import { findBy } from "../../helpers/search";
-import useSwitchBetweenState from "../../hooks/useSwitchBetweenState";
-import useInputState from "../../hooks/useInputState";
+import { findBy } from "../../../../helpers/search";
+import useSwitchBetweenState from "../../../../hooks/useSwitchBetweenState";
+import useInputState from "../../../../hooks/useInputState";
 
-import Header from "../UI/header/Header";
+import Header from "../../../UI/header/Header";
 import SearchInput from "./searchInput/SearchInput";
-import List from "../list/List";
 
 import classes from "./Search.module.css";
 
-function Search({ posts, openPost }) {
+function Search({ posts }) {
   
   const [query, updateQuery] = useInputState("");
   const [criteria, switchCriteria] = useSwitchBetweenState("title", "author");
@@ -25,7 +24,6 @@ function Search({ posts, openPost }) {
         criteria={criteria}
         switchCriteria={switchCriteria} 
       />
-      <List posts={results} openPost={openPost} />
     </div>
   )
 };

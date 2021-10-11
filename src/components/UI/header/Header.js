@@ -1,16 +1,17 @@
 import classes from "./Header.module.css";
 
-function Header(props) {
+function Header({ children, onClick, styles }) {
+
   return (
-    <h1 
+    <h1
       className={classes.root} 
       style={{
-        ...props.styles, 
-        cursor: `${props.onClick ? "pointer" : "auto"}`
+        ...styles, 
+        cursor: `${onClick ? "pointer" : "auto"}`
       }}
-      onClick={props.onClick}
+      onClick={onClick}
     >
-      {props.children}
+      {children}
     </h1>
   )
 };
