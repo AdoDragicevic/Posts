@@ -10,9 +10,7 @@ function Show({ posts }) {
   const { title, author, address, content, date } = post;
 
   return (
-    <Page>
-      
-    </Page>
+    <p>hehehe</p>
     
   )
 };
