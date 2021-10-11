@@ -16,6 +16,7 @@ function App() {
   
   const [posts, setPosts] = useLocalStorageState("posts", seedData); 
 
+
   return (
     <div className="App">
       <Nav />
@@ -30,10 +31,10 @@ function App() {
           <New />
         </Route>
         <Route path="/posts/:id" exact>
-          <Show />
+          <Show posts={posts} />
         </Route>
         <Route path="/posts/:id/edit" exact>
-          <Edit />
+          <Edit posts={posts} />
         </Route>
       </Switch>
     </div>
