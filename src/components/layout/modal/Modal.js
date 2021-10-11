@@ -1,5 +1,5 @@
-import Button from "../button/Button";
-import Header from "../header/Header";
+import Button from "../../UI/button/Button";
+import Header from "../../UI/header/Header";
 
 import classes from "./Modal.module.css";
 
