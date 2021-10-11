@@ -1,17 +1,10 @@
-import Button from "../../UI/button/Button";
-import Header from "../../UI/header/Header";
-
 import classes from "./Modal.module.css";
 
-function Modal({ onYes, onNo, msg }) {
+function Modal({ children, closeModal }) {
   return (
-    <div className={classes.root} onClick={onNo}>
-      <div className={classes.container}>
-        <Header styles={{ fontSize: "20px" }}> {msg ? msg : "Are you sure?"} </Header>
-        <div className={classes.btns}>
-          <Button color="secondary" size="small" onClick={onNo}> Cancel </Button>
-          <Button color="danger" size="small" onClick={onYes}> Confirm </Button>
-        </div>
+    <div className={classes.root} onClick={closeModal}>
+      <div className={classes.content}>
+        {children}
       </div>
     </div>
   )

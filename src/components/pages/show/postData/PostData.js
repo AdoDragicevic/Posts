@@ -6,6 +6,7 @@ import Button from "../../../UI/button/Button";
 import Modal from "../../../layout/modal/Modal";
 
 import classes from "./PostData.module.css";
+import ConfirmationBox from "../../../UI/confirmationBox/ConfirmationBox";
 
 function PostData({ author, address, date, id }) {
 
@@ -27,7 +28,11 @@ function PostData({ author, address, date, id }) {
           <Button size="small" color="danger" onClick={showModal}> Delete </Button>
         </div>
       </div>
-      {isModalShown && <Modal onCancel={hideModal} />}
+      {isModalShown && (
+        <Modal closeModal={hideModal}>
+          <ConfirmationBox onConfirm={null} onCancel={hideModal} />
+        </Modal>
+      )}
     </>
   )
 };
