@@ -2,6 +2,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import useLocalStorageState from "./hooks/useLocalStorageState";
 
+import Nav from "./components/layout/nav/Nav";
 import Index from "./components/pages/index/Index";
 import New from "./components/pages/new/New";
 import Show from "./components/pages/show/Show";
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <Switch>
         <Route path="/" exact>
           <Redirect to="/posts" />
