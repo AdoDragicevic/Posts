@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom";
+
 import ListItem from "./listItem/ListItem";
 
 import classes from "./List.module.css";
 
-function List({ posts, openPost }) {
+
+function List({ posts }) {
   if (posts.length === 0) return <p>No posts...</p>;
-  const items = posts.map( p => ( 
-      <ListItem key={p.id} {...p} openPost={openPost} />
+  const items = posts.map( post => (
+      <Link to={`/postst/${post.id}`}>
+        <ListItem key={post.id} {...post} />
+      </Link> 
   ));
   return <ul className={classes.root}> {items} </ul>;
 };

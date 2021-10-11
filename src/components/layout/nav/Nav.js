@@ -8,15 +8,16 @@ function Nav({ content, setContent }) {
 
   const { pathname } = useLocation();
 
-  console.log(pathname);
+  const btnLink = pathname === "/posts" ? "/posts/new" : "/posts";
+  const btnTxt = pathname === "/posts" ? "Add new" : "Back";
 
   return (
     <nav className={classes.root}>
       <Link to="/posts">
         <Header styles={{ fontSize: "18px" }}> Posts </Header>
       </Link>
-      <Link to="/posts/new">
-        <Button> {pathname === "/posts" ? "Add new" : "Back"} </Button>
+      <Link to={btnLink}>
+        <Button> {btnTxt} </Button>
       </Link>
     </nav>
   )
