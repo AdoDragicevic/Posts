@@ -1,7 +1,7 @@
 
 import { useParams } from "react-router-dom";
 
-import Page from "../../layout/page/Page";
+import Container from "../../layout/container/Container";
 
 function Show({ posts }) {  
 
@@ -10,7 +10,12 @@ function Show({ posts }) {
   const { title, author, address, content, date } = post;
 
   return (
-    <p>hehehe</p>
+    <Container width="smaill">
+      <Header>{title}</Header>
+      <ImgBox url={img} />
+      <PostData post={post} editPost={editPost} deletePost={deletePost} />
+      <PostContent description={description} goBack={goBack} />
+    </Container>
     
   )
 };
