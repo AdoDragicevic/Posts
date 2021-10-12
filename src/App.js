@@ -34,7 +34,6 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <button onClick={ () => setNotification({ isSuccess: false, txt: "Post added!" })}>Click me</button>
       {notification && <Popup {...notification} />}
       <Page>
         <Switch>
