@@ -2,6 +2,7 @@ import { Redirect , useParams } from "react-router-dom";
 
 import { getDateStr } from "../../../helpers/date";
 
+import Container from "../../layout/container/Container";
 import Header from "../../UI/header/Header";
 import Form from "../../UI/form/Form";
 
@@ -17,10 +18,10 @@ function Edit({ posts, updatePost }) {
   };
 
   return (
-    <>
+    <Container width="small">
       <Header>Edit post</Header>
       <Form post={post} submit={submit} />
-    </>
+    </Container>
   )
 
 };

@@ -1,5 +1,6 @@
 import uuid from "react-uuid";
 
+import Container from "../../layout/container/Container";
 import Header from "../../UI/header/Header";
 import Form from "../../UI/form/Form";
 
@@ -14,10 +15,10 @@ function New({ addPost }) {
   };
 
   return (
-    <>
+    <Container width="small">
       <Header>Add new post</Header>
       <Form submit={submit} />
-    </>
+    </Container>
   )
 };
 

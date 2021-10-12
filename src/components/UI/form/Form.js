@@ -6,7 +6,6 @@ import useIncrementState from "../../../hooks/useIncrementState";
 import useFocusState from "../../../hooks/useFocusState";
 import useOnOffState from "../../../hooks/useOnOffState";
 
-import Container from "../../layout/container/Container";
 import FormHeader from "./formHeader/FormHeader";
 import FormFooter from "./formFooter/FormFooter";
 import Inputs from "./formContent/inputs/Inputs";
@@ -62,13 +61,11 @@ function Form({ post, submit }) {
   if (isLoading === false) return <Redirect to="/posts" />;
 
   return (
-    <Container width="small">
-      <form className={classes.root}>
-        <FormHeader page={page} />
-        <div className={classes.body}> {content[page]} </div>
-        <FormFooter page={page} back={previousPage} next={handleNextPage} />
-      </form>
-    </Container>
+    <form className={classes.root}>
+      <FormHeader page={page} />
+      <div className={classes.body}> {content[page]} </div>
+      <FormFooter page={page} back={previousPage} next={handleNextPage} />
+    </form>
   )
 };
 
