@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import useOnOffState from "../../../../hooks/useOnOffState";
 
@@ -8,10 +8,19 @@ import Modal from "../../../layout/modal/Modal";
 import classes from "./PostData.module.css";
 import ConfirmationBox from "../../../UI/confirmationBox/ConfirmationBox";
 
-function PostData({ author, address, date, id }) {
+function PostData({ post, deletePost }) {
+
+  const { author, address, date, id } = post;
 
   const [isModalShown, showModal, hideModal] = useOnOffState(false);
 
+  const history = useHistory();
+
+
+  const handleDelete = () => {
+    deletePost(id);
+    history.push("/posts");
+  };
 
   return (
     <>
@@ -30,7 +39,7 @@ function PostData({ author, address, date, id }) {
       </div>
       {isModalShown && (
         <Modal closeModal={hideModal}>
-          <ConfirmationBox onConfirm={null} onCancel={hideModal} />
+          <ConfirmationBox onConfirm={handleDelete} onCancel={hideModal} />
         </Modal>
       )}
     </>

@@ -8,7 +8,7 @@ import PostData from "./postData/PostData";
 import PostContent from "./postContent/PostContent";
 
 
-function Show({ posts }) {  
+function Show({ posts, deletePost }) {  
 
   const { id } = useParams();
   const post = posts.find(post => post.id === id);
@@ -18,7 +18,7 @@ function Show({ posts }) {
     <Container width="small">
       <Header>{title}</Header>
       <ImgBox url={img} />
-      <PostData {...post} />
+      <PostData post={post} deletePost={deletePost} />
       <PostContent description={description} />
     </Container>
     
