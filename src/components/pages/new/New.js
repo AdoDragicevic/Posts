@@ -1,6 +1,23 @@
-function New() {
+import uuid from "react-uuid";
+
+import Header from "../../UI/header/Header";
+import Form from "../../UI/form/Form";
+
+import { getDateStr } from "../../../helpers/date";
+
+
+function New({ addPost }) {
+
+  const submit = inputData => {
+    const newInput = { ...inputData, id: uuid(), date: getDateStr() };
+    addPost(newInput);
+  };
+
   return (
-    <p>New</p>
+    <>
+      <Header>Add new post</Header>
+      <Form submit={submit} />
+    </>
   )
 };
 

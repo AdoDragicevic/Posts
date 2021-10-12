@@ -6,7 +6,11 @@ import Input from "./input/Input";
 
 import "./Inputs.module.css";
 
-function InputsGroup({ title, updateTitle, author, updateAuthor, address, updateAddress }) {
+function InputsGroup({ vals, onChange }) {
+  
+  const { title, author, address } = vals;
+  const { updateTitle, updateAuthor, updateAddress } = onChange;
+  
   return (
     <>
       <Input 

@@ -1,17 +1,20 @@
 import { useState } from "react";
-import useInputState from "../../hooks/useInputState";
-import useIncrementState from "../../hooks/useIncrementState";
-import useFocusState from "../../hooks/useFocusState";
+import { Redirect } from "react-router-dom";
+
+import useInputState from "../../../hooks/useInputState";
+import useIncrementState from "../../../hooks/useIncrementState";
+import useFocusState from "../../../hooks/useFocusState";
+import useOnOffState from "../../../hooks/useOnOffState";
 
 import FormHeader from "./formHeader/FormHeader";
 import FormFooter from "./formFooter/FormFooter";
 import Inputs from "./formContent/inputs/Inputs";
 import ImgUploader from "./formContent/imgUploader/ImgUploader";
 import Textarea from "./formContent/textarea/Textarea";
-import LoadingAnimation from "../UI/loadingAnimation/LoadingAnimation";
+import LoadingAnimation from "../loadingAnimation/LoadingAnimation";
 
-import { uploadImage } from "../../helpers/cloudinary";
-import { validation } from "../../helpers/formValidations";
+import { uploadImage } from "../../../helpers/cloudinary";
+import { validation } from "../../../helpers/formValidations";
 
 import classes from "./Form.module.css";
 
@@ -19,7 +22,7 @@ import classes from "./Form.module.css";
 function Form({ post, submit }) {
 
   const [page, nextPage, previousPage] = useIncrementState(0);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, startLoading, finishLoading] = useOnOffState(null);
   const [focusedInput, setFocusedInput] = useFocusState(null);
 
   const [title, updateTitle] = useInputState(post ? post.title : "");
@@ -30,14 +33,7 @@ function Form({ post, submit }) {
 
 
   const content = [
-    <Inputs 
-      title={title}
-      updateTitle={updateTitle}
-      author={author}
-      updateAuthor={updateAuthor}
-      address={address}
-      updateAddress={updateAddress}
-    />,
+    <Inputs vals={{ title, author, address }} onChange={{ updateTitle, updateAuthor, updateAddress}} />,
     <ImgUploader img={img} onChange={setImg} />,
     <Textarea name="description" value={description} onChange={updateDescription} />
   ];
@@ -52,15 +48,17 @@ function Form({ post, submit }) {
 
 
   const submitForm = async inputVals => {
-    setIsLoading(true);
+    startLoading();
     inputVals.img = (post && post.img === img.url) ? img.url : await uploadImage(img.files);
-    setIsLoading(false);
+    finishLoading();
     submit(inputVals);
+    <Redirect to="/posts" />
   };
 
 
-
   if (isLoading) return <LoadingAnimation msg="Saving..." />;
+
+  if (isLoading === false) return <Redirect to="/posts" />;
 
   return (
     <form className={classes.root}>

@@ -1,5 +1,6 @@
 import { useRef } from "react";
-import Button from "../../../UI/button/Button";
+
+import Button from "../../../button/Button";
 
 import classes from "./ImgUploader.module.css";
 

@@ -15,7 +15,19 @@ import './App.css';
 
 function App() {
   
-  const [posts, setPosts] = useLocalStorageState("posts", seedData); 
+  const [posts, setPosts] = useLocalStorageState("posts", seedData);
+  
+  const addPost = newPost => setPosts([newPost, ...posts]);
+
+  const deletePost = id => {
+    const p = posts.filter(post => post.id !== id);
+    setPosts(p);
+  };
+
+  const updatePost = (id, newPost) => {
+    const otherPosts = posts.filter(post => post.id !== id);
+    setPosts([newPost,...otherPosts]);
+  };
 
 
   return (
@@ -30,13 +42,13 @@ function App() {
             <Index posts={posts} setPosts={setPosts} />
           </Route>
           <Route path="/posts/new" exact>
-            <New />
+            <New addPost={addPost} />
           </Route>
           <Route path="/posts/:id" exact>
             <Show posts={posts} />
           </Route>
           <Route path="/posts/:id/edit" exact>
-            <Edit posts={posts} />
+            <Edit posts={posts} updatePost={updatePost} />
           </Route>
         </Switch>
       </Page>

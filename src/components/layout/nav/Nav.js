@@ -1,14 +1,15 @@
+import { Link, useLocation } from "react-router-dom";
+
 import Header from "../../UI/header/Header";
 import Button from "../../UI/button/Button";
 
-import { Link, useLocation } from "react-router-dom";
 import classes from "./Nav.module.css";
 
-function Nav({ content, setContent }) {
+function Nav() {
 
   const { pathname } = useLocation();
-
-  const btnLink = pathname === "/posts" ? "/posts/new" : "/posts";
+  
+  const btnLink = pathname === "/posts" ? "/posts/new" : `/`;
   const btnTxt = pathname === "/posts" ? "Add new" : "Back";
 
   return (

@@ -1,6 +1,6 @@
 import { IoChevronBackSharp } from "react-icons/io5";
 
-import Button from "../../UI/button/Button";
+import Button from "../../button/Button";
 
 import classes from "./FormFooter.module.css";
 
