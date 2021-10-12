@@ -1,6 +1,6 @@
 import Header from "../header/Header";
 
-import loadingSVG from "../../../imgs/loading2.svg";
+import loadingSVG from "../../../imgs/loading.svg";
 
 import classes from "./LoadingAnimation.module.css";
 
