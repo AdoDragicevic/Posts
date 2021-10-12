@@ -1,30 +1,30 @@
-# Posts module
+# Posts
 
-## This module can be added to an application that stores an array of posts in its state. It takes in posts and setPosts as props, and provides different functionalities. :pencil2:
+## Single page app made from scratch with React Hooks and Router :pencil2:
 
 ### Visit it on Netlify
 
-https://elated-wozniak-ea457e.netlify.app/
+https://distracted-cray-f07398.netlify.app/
 
 ### Functionalities
 * add / edit / delete post
 * list posts
-* search posts (by author / title)
+* search posts by author or title
 * show individual post
 * Cloudinary picture upload
-* multipage form
+* multistep form
 * custom form validation
-* uploaded images are displayed, but only sent to Cloudinary on the submission of the entire form
+* uploaded images are displayed, but only sent to Cloudinary on form submission
 * modal confirmation before deleting post
+* popup notifications
 * local storage
 * responsive design
 * loading animation
 
 ### Using
-* React.js (with Hooks)
-* JavaScript (ES6, AJAX)
+* React.js
+* Custom Hooks
+* React Router
+* JavaScript (ES6)
+* AJAX (AJAJ)
 * CSS3 (React CSS modules)
-
-### More
-
-Open Plan.md to see the undertaken and planed steps
