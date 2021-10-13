@@ -13,21 +13,26 @@ import Edit from "./components/pages/edit/Edit";
 
 import seedData from "./seedData";
 
-import './App.css';
-
 
 function App() {
   
   const [posts, setPosts] = useLocalStorageState("posts", seedData);
   const [notification, setNotification] = useTemporaryState(false, 3000);
 
-  const addPost = newPost => setPosts( [newPost, ...posts] );
+  const addPost = newPost => {
+    setPosts( [newPost, ...posts] );
+    setNotification({ isSuccess: true, txt: "Post published!" });
+  };
 
-  const deletePost = id => setPosts( posts.filter(post => post.id !== id) );
+  const deletePost = id => {
+    setPosts( posts.filter(post => post.id !== id) );
+    setNotification({ isSuccess: true, txt: "Post deleted!" });
+  };
 
   const updatePost = (id, newPost) => {
     const otherPosts = posts.filter(post => post.id !== id);
     setPosts([newPost,...otherPosts]);
+    setNotification({ isSuccess: true, txt: "Post updated!" });
   };
 
 
