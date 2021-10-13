@@ -4,7 +4,7 @@
 
 ### Visit it on Netlify
 
-https://distracted-cray-f07398.netlify.app/
+https://stoic-mayer-3f3b78.netlify.app/
 
 ### Functionalities
 * add / edit / delete post
