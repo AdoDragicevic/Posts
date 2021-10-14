@@ -4,6 +4,7 @@ import useInputState from "../../../../hooks/useInputState";
 
 import Header from "../../../UI/header/Header";
 import SearchInput from "./searchInput/SearchInput";
+import List from "./list/List";
 
 import classes from "./Search.module.css";
 
@@ -24,6 +25,7 @@ function Search({ posts }) {
         criteria={criteria}
         switchCriteria={switchCriteria} 
       />
+      <List posts={results} />
     </div>
   )
 };
