@@ -4,7 +4,7 @@
 
 ### Visit it on Netlify
 
-https://stoic-mayer-3f3b78.netlify.app/
+https://practical-engelbart-3fc893.netlify.app/
 
 ### Functionalities
 * add / edit / delete post
