@@ -1,11 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
 
+import useScreenWidthState from "../../../hooks/useScreenWidthState";
+
 import Header from "../../UI/header/Header";
 import Button from "../../UI/button/Button";
 
 import classes from "./Nav.module.css";
 
 function Nav() {
+
+  const [btnSize] = useScreenWidthState(620, "small", "medium");
 
   const { pathname } = useLocation();
   
@@ -18,7 +22,7 @@ function Nav() {
         <Header styles={{ fontSize: "18px" }}> Posts </Header>
       </Link>
       <Link to={btnLink}>
-        <Button> {btnTxt} </Button>
+        <Button size={btnSize}> {btnTxt} </Button>
       </Link>
     </nav>
   )
