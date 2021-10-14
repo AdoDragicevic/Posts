@@ -10,7 +10,7 @@ https://practical-engelbart-3fc893.netlify.app/
 * add / edit / delete post
 * list posts
 * search posts by author or title
-* show individual post
+* open individual post
 * Cloudinary picture upload
 * multistep form
 * custom form validation

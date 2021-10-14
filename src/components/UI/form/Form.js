@@ -23,7 +23,7 @@ function Form({ post, submit }) {
 
   const [page, nextPage, previousPage] = useIncrementState(0);
   const [isLoading, startLoading, finishLoading] = useOnOffState(null);
-  const [focusedInput, setFocusedInput] = useFocusState(null);
+  const [setFocusedInput] = useFocusState(null);
 
   const [title, updateTitle] = useInputState(post ? post.title : "");
   const [author, updateAuthor] = useInputState(post ? post.author : "");

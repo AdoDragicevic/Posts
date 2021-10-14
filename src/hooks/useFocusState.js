@@ -9,7 +9,7 @@ const useFocusState = (initVal = null) => {
     }
     setFocus("");
   }, [focus]);
-  return [focus, setFocus]; 
+  return [setFocus]; 
 };
 
 export default useFocusState;
