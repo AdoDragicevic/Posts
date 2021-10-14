@@ -3,7 +3,7 @@ import Header from "../../../../../UI/header/Header";
 import classes from "./ListItem.module.css";
 
 
-function ListItem({ img, title, address, author, id, openPost }) {
+function ListItem({ img, title, address, author }) {
   return (
     <li className={classes.root}>
       <Header>{title}</Header>
