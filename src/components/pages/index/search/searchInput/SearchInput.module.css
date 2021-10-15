@@ -9,20 +9,18 @@
   transform: translateY(39px);
   border: 1px solid rgba(233, 233, 233, .3);
   background-color:  rgba(233, 233, 233, .7);
-  outline: none;
   height: 40px;
   padding: 0 5px;
-  width: 150px;
+  width: 170px;
   cursor: pointer;
   transition: all .5s ease;
   color: #2c1f04;
   letter-spacing: 1px;
-  text-align: start;
 }
 
 @media screen and (max-width: 920px) {
   .btn {
-    transform: translateY(70px);
+    transform: translatex(0);
     height: 30px;
   }
 }
