@@ -4,7 +4,7 @@
 
 ### Visit it on Netlify
 
-https://practical-engelbart-3fc893.netlify.app/
+https://admiring-kalam-039e52.netlify.app/
 
 ### Functionalities
 * add / edit / delete post
