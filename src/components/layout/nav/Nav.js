@@ -1,4 +1,4 @@
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import useScreenWidthState from "../../../hooks/useScreenWidthState";
 
@@ -15,13 +15,13 @@ function Nav() {
   const { pathname } = useLocation();
   
   const btnTxt = pathname === "/posts" ? "Add new" : "Back";
+
+  const handleHeaderClick = () => history.push("/posts");
   const handleBtnClick = () => pathname === "/posts" ? history.push("/posts/new") : history.goBack();
 
   return (
     <nav className={classes.root}>
-      <Link to="/posts">
-        <Header styles={{ fontSize: 18, cursor: "pointer" }}> Posts </Header>
-      </Link>
+      <Header styles={{ fontSize: 18}} onClick={handleHeaderClick}> Posts </Header>
       <Button size={btnSize} onClick={handleBtnClick}> {btnTxt} </Button>
     </nav>
   )
