@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 
 import ListItem from "./listItem/ListItem";
@@ -15,4 +16,4 @@ function List({ posts }) {
   return <ul className={classes.root}> {items} </ul>;
 };
 
-export default List;
+export default memo(List);

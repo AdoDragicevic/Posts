@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { Redirect } from "react-router-dom";
 
 import useInputState from "../../../hooks/useInputState";
@@ -26,13 +26,13 @@ function Form({ post, submit, setNotification }) {
 
   const [title, updateTitle] = useInputState(post ? post.title : "");
   const [author, updateAuthor] = useInputState(post ? post.author : "");
-  const [email, updateAddress] = useInputState(post ? post.email : "");
+  const [email, updateEmail] = useInputState(post ? post.email : "");
   const [description, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
 
 
   const content = [
-    <Inputs vals={{ title, author, email }} onChange={{ updateTitle, updateAuthor, updateAddress}} />,
+    <Inputs vals={{ title, author, email }} onUpdate={{ updateTitle, updateAuthor, updateEmail }} />,
     <ImgUploader img={img} onChange={setImg} />,
     <Textarea name="description" value={description} onChange={updateDescription} />
   ];
@@ -68,4 +68,4 @@ function Form({ post, submit, setNotification }) {
   )
 };
 
-export default Form;
+export default memo(Form);

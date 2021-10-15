@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import classes from "./FormHeader.module.css";
 
 function FormHeader({ page }) {
@@ -13,4 +15,4 @@ function FormHeader({ page }) {
   )
 };
 
-export default FormHeader;
+export default memo(FormHeader);

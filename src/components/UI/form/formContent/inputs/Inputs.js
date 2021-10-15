@@ -5,10 +5,10 @@ import { IoMailOutline } from "react-icons/io5";
 import Input from "./input/Input";
 
 
-function InputsGroup({ vals, onChange }) {
-  
+function InputsGroup({ vals, onUpdate }) {
+
   const { title, author, email } = vals;
-  const { updateTitle, updateAuthor, updateAddress } = onChange;
+  const { updateTitle, updateAuthor, updateEmail } = onUpdate;
   
   return (
     <>
@@ -32,7 +32,7 @@ function InputsGroup({ vals, onChange }) {
         type="text"
         name="email"
         value={email}
-        onChange={updateAddress}
+        onChange={updateEmail}
         placeholder="john.smith@gmail.com"
         icon= { <IoMailOutline /> }
       />
