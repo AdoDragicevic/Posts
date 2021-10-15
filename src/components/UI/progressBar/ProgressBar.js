@@ -11,7 +11,7 @@ function ProgressBar({ nOfsteps, currStep }) {
     const css = `${classes.step} ${currStep === i && classes.active}`;
     const txt = `${nums ? nums[i] : i+1}`;
     steps.push( 
-      <li className={css}> {txt} </li> 
+      <li className={css} key={i}> {txt} </li> 
     );
   };
   
