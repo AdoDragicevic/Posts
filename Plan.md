@@ -1,4 +1,2 @@
 Left:
-  
-  -> useReducer & useContext
-  -> optimization (e.g. memo)
+  -> useReducer & useContex
