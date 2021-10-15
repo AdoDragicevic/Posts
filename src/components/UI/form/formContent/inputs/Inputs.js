@@ -4,7 +4,6 @@ import { IoMailOutline } from "react-icons/io5";
 
 import Input from "./input/Input";
 
-import "./Inputs.module.css";
 
 function InputsGroup({ vals, onChange }) {
   
