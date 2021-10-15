@@ -1,6 +1,6 @@
 import loremIpsum from "./loremIpsum"
 
-const seedData = [
+const posts = [
   {
     title: "Why I'm the Big Boss",
     author: "Solid snake",
@@ -30,4 +30,4 @@ const seedData = [
   }
 ];
 
-export default seedData;
+export default posts;

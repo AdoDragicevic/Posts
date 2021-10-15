@@ -11,7 +11,7 @@ import New from "./components/pages/new/New";
 import Show from "./components/pages/show/Show";
 import Edit from "./components/pages/edit/Edit";
 
-import seedData from "./seedData";
+import seedData from "./seedData/posts";
 
 
 function App() {
