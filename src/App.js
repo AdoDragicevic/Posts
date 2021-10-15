@@ -49,13 +49,13 @@ function App() {
             <Index posts={posts} setPosts={setPosts} />
           </Route>
           <Route path="/posts/new" exact>
-            <New addPost={addPost} />
+            <New addPost={addPost} setNotification={setNotification} />
           </Route>
           <Route path="/posts/:id" exact>
             <Show posts={posts} deletePost={deletePost} />
           </Route>
           <Route path="/posts/:id/edit" exact>
-            <Edit posts={posts} updatePost={updatePost} />
+            <Edit posts={posts} updatePost={updatePost} setNotification={setNotification} />
           </Route>
         </Switch>
       </Page>

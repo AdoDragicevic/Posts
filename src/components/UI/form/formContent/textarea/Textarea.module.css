@@ -6,11 +6,12 @@
 }
 
 .label {
-  font-size: 10px;
+  font-size: 13px;
   padding-left: 1rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #227C9D;
+  letter-spacing: 2px;
+  color: #0D0630;
+  font-weight: 500;
 }
 
 .textarea {

@@ -4,10 +4,12 @@ import Button from "../../../button/Button";
 
 import classes from "./ImgUploader.module.css";
 
+
 function ImgUploader({ img, onChange }) {
 
   const input = useRef();
 
+  const handleBtnClick = () => input.current.click();
 
   const handleChange = e => {
     const files = e.target.files;
@@ -17,19 +19,12 @@ function ImgUploader({ img, onChange }) {
 
   return (
     <div className={classes.root}>
-      <Button
-        type="button"
-        color="alert"
-        size="small"
-        onClick={() => input.current.click()}
-      >
-        Upload
-      </Button>
+      <Button type="button" color="alert" size="small" onClick={handleBtnClick}> Upload </Button>
       <input type="file" accept="image/*" onChange={handleChange} ref={input} hidden/>
       <div className={classes.imgBox}>
         <img className={classes.img} src={img.url} alt={img.url ? "Uploaded" : null} />
+        <p className={classes.msg}> Upload image </p>
       </div>
-      
     </div>
   )
 };

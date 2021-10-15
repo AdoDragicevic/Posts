@@ -8,7 +8,7 @@
   height: 50px;
   min-height: max-content;
   width: 20vw;
-  min-width: max-content;
+  min-width: 250px;
   max-width: 90vw;
   background-color: #0D0630;
   color: #EBEBEB;
@@ -18,7 +18,7 @@
 }
 
 .txt {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .icon {

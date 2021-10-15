@@ -7,7 +7,7 @@ import Form from "../../UI/form/Form";
 import { getDateStr } from "../../../helpers/date";
 
 
-function New({ addPost }) {
+function New({ addPost, setNotification }) {
 
   const submit = inputData => {
     const newInput = { ...inputData, id: uuid(), date: getDateStr() };
@@ -17,7 +17,7 @@ function New({ addPost }) {
   return (
     <Container width="small">
       <Header>Add new post</Header>
-      <Form submit={submit} />
+      <Form submit={submit} setNotification={setNotification} />
     </Container>
   )
 };

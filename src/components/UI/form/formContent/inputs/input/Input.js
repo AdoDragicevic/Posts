@@ -1,9 +1,10 @@
 import classes from "./Input.module.css";
 
+
 function Input({ type, name, value, onChange, placeholder, isRequired, icon }) {
   return (
     <div className={classes.root}>
-      <label className={classes.label} htmlFor={name}>{name}</label>
+      <label className={classes.label} htmlFor={name}> {name} </label>
       <input
         className={classes.input}
         type={type}
@@ -11,13 +12,11 @@ function Input({ type, name, value, onChange, placeholder, isRequired, icon }) {
         name={name}
         value={value}
         placeholder={placeholder}
-        onChange={onChange} 
+        onChange={onChange}
         required={isRequired}
         maxLength={75}
       />
-      <i className={classes.icon}>
-        {icon}
-      </i>
+      <i className={classes.icon}> {icon} </i>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import Header from "../../UI/header/Header";
 import Form from "../../UI/form/Form";
 
 
-function Edit({ posts, updatePost }) {
+function Edit({ posts, updatePost, setNotification }) {
 
   const { id } = useParams();
   const post = posts.find(post => post.id === id);
@@ -20,7 +20,7 @@ function Edit({ posts, updatePost }) {
   return (
     <Container width="small">
       <Header>Edit post</Header>
-      <Form post={post} submit={submit} />
+      <Form post={post} submit={submit} setNotification={setNotification} />
     </Container>
   )
 
