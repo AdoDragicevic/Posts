@@ -53,9 +53,7 @@ function Form({ post, submit, setNotification }) {
 
 
   if (isLoading) return <LoadingAnimation msg="Saving..." />;
-
   if (isLoading === false) return <Redirect to="/posts" />;
-
   return (
     <form className={classes.root}>
       <FormHeader page={page} />
