@@ -30,13 +30,11 @@ function Form({ post, submit, setNotification }) {
   const [description, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
 
-
   const content = [
     <Inputs vals={{ title, author, email }} onUpdate={{ updateTitle, updateAuthor, updateEmail }} />,
     <ImgUploader img={img} onChange={setImg} />,
     <Textarea name="description" value={description} onChange={updateDescription} />
   ];
-
 
   const handleNextPage = e => {
     e.preventDefault();
@@ -44,7 +42,6 @@ function Form({ post, submit, setNotification }) {
     if (!validation(page, inputVals, setFocusedInput, setNotification)) return;
     page === 2 ? submitForm(inputVals) : nextPage();
   };
-
 
   const submitForm = async inputVals => {
     setIsLoading(true);
