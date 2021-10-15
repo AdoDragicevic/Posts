@@ -9,7 +9,6 @@ Left:
   -> perfect styling
   -> display posts in grid on Index page
   -> pagination
-  -> line animation below multi page form
   -> dark mode
   
   -> useReducer & useContext

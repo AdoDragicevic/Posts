@@ -16,6 +16,7 @@ https://practical-engelbart-3fc893.netlify.app/
 * custom form validation
 * uploaded images are displayed, but only sent to Cloudinary on form submission
 * loading animation
+* form progress bar
 * modal confirmation before deleting post
 * popup notifications
 * local storage

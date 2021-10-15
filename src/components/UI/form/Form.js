@@ -12,6 +12,7 @@ import Inputs from "./formContent/inputs/Inputs";
 import ImgUploader from "./formContent/imgUploader/ImgUploader";
 import Textarea from "./formContent/textarea/Textarea";
 import LoadingAnimation from "../loadingAnimation/LoadingAnimation";
+import ProgressBar from "../progressBar/ProgressBar";
 
 import { uploadImage } from "../../../helpers/cloudinary";
 import { validation } from "../../../helpers/formValidations";

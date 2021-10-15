@@ -1,6 +1,23 @@
 .root {
   position: relative;
   display: flex;
+  flex-direction: column;
+}
+
+.btns {
+  display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  left: 1px;
+}
+
+.progress {
+  margin: 4rem auto 0 auto;
+  max-width: 300px;
+  width: 90%;
 }
