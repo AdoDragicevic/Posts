@@ -1,3 +1,5 @@
+import { createPortal } from "react-dom";
+
 import classes from "./Modal.module.css";
 
 function Modal({ children, closeModal }) {
@@ -10,4 +12,7 @@ function Modal({ children, closeModal }) {
   )
 };
 
-export default Modal;
+
+const portalRoot = document.querySelector("#overlay-root");
+const ModalPortal = props => createPortal(<Modal {...props} />, portalRoot);
+export default ModalPortal;
