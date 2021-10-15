@@ -28,13 +28,13 @@ function Form({ post, submit }) {
 
   const [title, updateTitle] = useInputState(post ? post.title : "");
   const [author, updateAuthor] = useInputState(post ? post.author : "");
-  const [address, updateAddress] = useInputState(post ? post.address : "");
+  const [email, updateAddress] = useInputState(post ? post.email : "");
   const [description, updateDescription] = useInputState(post ? post.description : "");
   const [img, setImg] = useState({ files: null, url: post ? post.img : null });
 
 
   const content = [
-    <Inputs vals={{ title, author, address }} onChange={{ updateTitle, updateAuthor, updateAddress}} />,
+    <Inputs vals={{ title, author, email }} onChange={{ updateTitle, updateAuthor, updateAddress}} />,
     <ImgUploader img={img} onChange={setImg} />,
     <Textarea name="description" value={description} onChange={updateDescription} />
   ];
@@ -42,7 +42,7 @@ function Form({ post, submit }) {
 
   const handleNextPage = e => {
     e.preventDefault();
-    const inputVals = { title, author, address, description, img };
+    const inputVals = { title, author, email, description, img };
     if (!validation(page, inputVals, setFocusedInput)) return;
     page === 2 ? submitForm(inputVals) : nextPage();
   };

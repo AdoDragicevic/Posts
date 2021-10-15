@@ -8,7 +8,7 @@ import "./Inputs.module.css";
 
 function InputsGroup({ vals, onChange }) {
   
-  const { title, author, address } = vals;
+  const { title, author, email } = vals;
   const { updateTitle, updateAuthor, updateAddress } = onChange;
   
   return (
@@ -31,8 +31,8 @@ function InputsGroup({ vals, onChange }) {
       />
       <Input 
         type="text"
-        name="address"
-        value={address}
+        name="email"
+        value={email}
         onChange={updateAddress}
         placeholder="john.smith@gmail.com"
         icon= { <IoMailOutline /> }

@@ -10,7 +10,7 @@ import ConfirmationBox from "../../../UI/confirmationBox/ConfirmationBox";
 
 function PostData({ post, deletePost }) {
 
-  const { author, address, date, id } = post;
+  const { author, email, date, id } = post;
 
   const [isModalShown, showModal, hideModal] = useOnOffState(false);
 
@@ -27,7 +27,7 @@ function PostData({ post, deletePost }) {
       <p className={classes.author}> <em>by</em> {author} </p>
       <div className={classes.container}>
         <div className={classes.left}>
-          <a className={classes.link} href ={`mailto: ${address}`}> {address} </a>
+          <a className={classes.link} href ={`mailto: ${email}`}> {email} </a>
           <span>{date}</span>
         </div>
         <div className={classes.right}>

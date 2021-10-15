@@ -3,7 +3,7 @@ import Header from "../../../../../UI/header/Header";
 import classes from "./ListItem.module.css";
 
 
-function ListItem({ img, title, address, author }) {
+function ListItem({ img, title, email, author }) {
   return (
     <li className={classes.root}>
       <Header>{title}</Header>
@@ -11,7 +11,7 @@ function ListItem({ img, title, address, author }) {
         <img className={classes.img} src={img} alt="Post" />
       </div>
       <div className={classes.info}>
-        <p className={classes.address}>{address}</p>
+        <p className={classes.email}>{email}</p>
         <p className={classes.author}>{author}</p>
       </div>
       <div className={classes.line} />
