@@ -6,6 +6,8 @@ Left:
   -> reduce img size on upload
   -> delete uploaded img from cloudinary when post is deleted / img replaced
   
+  -> handle fetch errors
+
   -> perfect styling
   
   -> display posts in grid on Index page
@@ -15,4 +17,4 @@ Left:
   
   -> dark mode with context
   
-  -> maybe reducer? (might be an overkill for this project)
+  -> reducer

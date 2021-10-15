@@ -6,6 +6,6 @@
   transition: opacity 2s;
 }
 
-.root:hover {
-  opacity: .8;
+.pointer {
+  cursor: pointer;
 }

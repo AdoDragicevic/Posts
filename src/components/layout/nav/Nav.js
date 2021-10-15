@@ -19,7 +19,7 @@ function Nav() {
   return (
     <nav className={classes.root}>
       <Link to="/posts">
-        <Header styles={{ fontSize: "18px" }}> Posts </Header>
+        <Header styles={{ fontSize: 18, cursor: "pointer" }}> Posts </Header>
       </Link>
       <Link to={btnLink}>
         <Button size={btnSize}> {btnTxt} </Button>
