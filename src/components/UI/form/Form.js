@@ -22,7 +22,7 @@ import classes from "./Form.module.css";
 function Form({ post, submit, setNotification }) {
 
   const [page, nextPage, previousPage] = useIncrementState(0);
-  const [isLoading, startLoading, finishLoading] = useOnOffState(null);
+  const [isLoading, setIsLoading] = useState(null);
   const [setFocusedInput] = useFocusState(null);
 
   const [title, updateTitle] = useInputState(post ? post.title : "");
@@ -48,11 +48,11 @@ function Form({ post, submit, setNotification }) {
 
 
   const submitForm = async inputVals => {
-    startLoading();
+    setIsLoading(true);
     inputVals.img = (post && post.img === img.url) ? img.url : await uploadImage(img.files);
-    finishLoading();
-    submit(inputVals);
-    <Redirect to="/posts" />
+    if (inputVals.img) submit(inputVals);
+    else setNotification({ isSuccess: false, txt: "Unable to upload image"});
+    setIsLoading(inputVals.img ? false : null);
   };
 
 
