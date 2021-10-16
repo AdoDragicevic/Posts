@@ -4,7 +4,7 @@
 
 ### Visit it on Netlify
 
-https://admiring-kalam-039e52.netlify.app/
+https://happy-davinci-1f3075.netlify.app/
 
 ### Functionalities
 * add / edit / delete post
