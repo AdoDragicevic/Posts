@@ -1,7 +1,7 @@
 import classes from "./ImgBox.module.css";
 
-function ImgBox({ url, msg }) {
-  return (
+function ImgBox({ url }) {
+  return !url ? null : (
     <div className={classes.root}>
       <img className={classes.img} src={url} alt="Post" />
     </div>
