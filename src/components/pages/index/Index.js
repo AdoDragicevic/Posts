@@ -5,7 +5,7 @@ import Search from "./search/Search";
 function Index({ posts }) {
   return (
     <Container>
-      <Header>Posts</Header>
+      <Header>Pages</Header>
       <Search posts={posts} />
     </Container>
   )

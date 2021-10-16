@@ -5,7 +5,6 @@ import useInputState from "../../../../hooks/useInputState";
 import SearchInput from "./searchInput/SearchInput";
 import List from "./list/List";
 
-import classes from "./Search.module.css";
 
 function Search({ posts }) {
   
@@ -13,10 +12,9 @@ function Search({ posts }) {
   const [criteria, switchCriteria] = useSwitchBetweenState("title", "author");
 
   const results = findBy(posts, query, criteria);
-  
-  
+   
   return (
-    <div className={classes.root}>
+    <>
       <SearchInput
         onChange={updateQuery}
         nOfResults={results.length}
@@ -24,7 +22,7 @@ function Search({ posts }) {
         switchCriteria={switchCriteria} 
       />
       <List posts={results} />
-    </div>
+    </>
   )
 };
 

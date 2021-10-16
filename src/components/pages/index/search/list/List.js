@@ -11,7 +11,7 @@ function List({ posts }) {
   const items = posts.map( post => (
       <Link key={post.id} to={`/posts/${post.id}`}>
         <ListItem key={post.id} {...post} />
-      </Link> 
+      </Link>
   ));
   return <ul className={classes.root}> {items} </ul>;
 };
