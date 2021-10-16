@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
 import Button from "../../../button/Button";
+import ImgBox from "../../../../layout/imgBox/ImgBox";
 
 import classes from "./ImgUploader.module.css";
 
@@ -21,8 +22,8 @@ function ImgUploader({ img, onChange }) {
     <div className={classes.root}>
       <Button type="button" color="alert" size="small" onClick={handleBtnClick}> Upload </Button>
       <input type="file" accept="image/*" onChange={handleChange} ref={input} hidden/>
-      <div className={classes.imgBox}>
-        <img className={classes.img} src={img.url} alt={img.url ? "Uploaded" : null} />
+      <div className={classes.img}>
+        <ImgBox url={img.url ? img.url : null} />
         <p className={classes.msg}> Upload image </p>
       </div>
     </div>

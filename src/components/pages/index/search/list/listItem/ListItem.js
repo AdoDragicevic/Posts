@@ -12,7 +12,7 @@ function ListItem({ img, title, email, author }) {
         <ImgBox url={img} />
       </div>
       <div className={classes.info}>
-        <p className={classes.email}>{email}</p>
+        <p>{email}</p>
         <p className={classes.author}>{author}</p>
       </div>
       <div className={classes.line} />
@@ -21,8 +21,3 @@ function ListItem({ img, title, email, author }) {
 };
 
 export default ListItem;
-
-
-//<div className={classes.imgBox}>
-  //      <img className={classes.img} src={img} alt="Post" />
-    //  </div>

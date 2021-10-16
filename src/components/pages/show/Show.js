@@ -7,6 +7,7 @@ import Header from "../../UI/header/Header";
 import PostData from "./postData/PostData";
 import PostContent from "./postContent/PostContent";
 
+import classes from "./Show.module.css";
 
 function Show({ posts, deletePost }) {  
 
@@ -17,7 +18,9 @@ function Show({ posts, deletePost }) {
   return (
     <Container width="small">
       <Header>{title}</Header>
-      <ImgBox url={img} />
+      <div className={classes.img}>
+        <ImgBox url={img} />
+      </div>
       <PostData post={post} deletePost={deletePost} />
       <PostContent description={description} />
     </Container>
