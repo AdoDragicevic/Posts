@@ -1,6 +1,6 @@
 # Posts
 
-## Single page app made from scratch with React Hooks and Router :pencil2:
+## Single page app made from scratch with React Hooks (including useContext & useReducer) and React Router :pencil2:
 
 ### Visit it on Netlify
 
