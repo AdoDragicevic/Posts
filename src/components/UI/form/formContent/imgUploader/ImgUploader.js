@@ -24,7 +24,7 @@ function ImgUploader({ img, onChange }) {
       <input type="file" accept="image/*" onChange={handleChange} ref={input} hidden/>
       <div className={classes.img}>
         <ImgBox url={img.url ? img.url : null} />
-        <p className={classes.msg}> Upload image </p>
+        {!img.url && <p className={classes.msg}> Upload image </p>}
       </div>
     </div>
   )
