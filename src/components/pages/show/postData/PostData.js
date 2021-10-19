@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import { PostsDispatchContext } from "../../../../contexts/postsContext";
+import { SetNotificationContext } from "../../../../contexts/notificationContext";
 
 import useOnOffState from "../../../../hooks/useOnOffState";
 
@@ -15,6 +16,7 @@ import ConfirmationBox from "../../../UI/confirmationBox/ConfirmationBox";
 function PostData({ post }) {
 
   const dispatch = useContext(PostsDispatchContext);
+  const setNotification = useContext(SetNotificationContext);
 
   const [isModalShown, showModal, hideModal] = useOnOffState(false);
 
@@ -24,6 +26,7 @@ function PostData({ post }) {
 
   const handleDelete = () => {
     dispatch({ type: "DELETE", id });
+    setNotification({ isSuccess: true, txt: "Post deleted" });
     history.push("/posts");
   };
 

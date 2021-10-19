@@ -1,5 +1,7 @@
-import { useState, memo } from "react";
+import { useState, memo, useContext } from "react";
 import { Redirect } from "react-router-dom";
+
+import { SetNotificationContext } from "../../../contexts/notificationContext";
 
 import useInputState from "../../../hooks/useInputState";
 import useIncrementState from "../../../hooks/useIncrementState";
@@ -18,7 +20,9 @@ import { validation } from "../../../helpers/formValidations";
 import classes from "./Form.module.css";
 
 
-function Form({ post, submit, setNotification }) {
+function Form({ post, submit }) {
+
+  const setNotification = useContext(SetNotificationContext);
 
   const [page, nextPage, previousPage] = useIncrementState(0);
   const [isLoading, setIsLoading] = useState(null);
@@ -54,7 +58,7 @@ function Form({ post, submit, setNotification }) {
 
   if (isLoading) return <LoadingAnimation msg="Saving..." />;
   if (isLoading === false) return <Redirect to="/posts" />;
-  return (
+  else return (
     <form className={classes.root}>
       <FormHeader page={page} />
       <div className={classes.body}> {content[page]} </div>

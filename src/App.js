@@ -1,7 +1,6 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import useTemporaryState from "./hooks/useTemporaryState";
-
+import { NotificationProvider } from "./contexts/notificationContext";
 import { PostsProvider } from "./contexts/postsContext";
 
 import Nav from "./components/layout/nav/Nav";
@@ -14,35 +13,22 @@ import Edit from "./components/pages/edit/Edit";
 
 
 function App() {
-  
-  const [notification, setNotification] = useTemporaryState(false, 3000);
-
   return (
-    <div className="App">
+    <NotificationProvider>
       <Nav />
-      {notification && <Popup {...notification} />}
       <Page>
         <PostsProvider>
-          <Switch>
-            <Route path="/" exact>
-              <Redirect to="/posts" />
-            </Route>
-            <Route path="/posts" exact>
-              <Index />
-            </Route>
-            <Route path="/posts/new" exact>
-              <New setNotification={setNotification} />
-            </Route>
-            <Route path="/posts/:id" exact>
-              <Show />
-            </Route>
-            <Route path="/posts/:id/edit" exact>
-              <Edit setNotification={setNotification} />
-            </Route>
+          <Switch>  
+            <Route exact path="/" render={() => <Redirect to="/posts" />} />
+            <Route exact path="/posts" component={Index} />
+            <Route exact path="/posts/new" component={New} />
+            <Route exact path="/posts/:id" component={Show} />
+            <Route exact path="/posts/:id/edit" component={Edit} />
           </Switch>
         </PostsProvider>
       </Page>
-    </div>
+      <Popup />
+    </NotificationProvider>
   );
 };
 
