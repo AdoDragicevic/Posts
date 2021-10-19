@@ -2,11 +2,11 @@ import Container from "../../layout/container/Container";
 import Header from "../../UI/header/Header";
 import Search from "./search/Search";
 
-function Index({ posts }) {
+function Index() {
   return (
     <Container>
       <Header>Posts</Header>
-      <Search posts={posts} />
+      <Search />
     </Container>
   )
 };

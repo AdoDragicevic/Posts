@@ -1,5 +1,7 @@
-
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
+
+import { PostsContext } from "../../../contexts/postsContext";
 
 import Container from "../../layout/container/Container";
 import ImgBox from "../../layout/imgBox/ImgBox";
@@ -9,7 +11,10 @@ import PostContent from "./postContent/PostContent";
 
 import classes from "./Show.module.css";
 
-function Show({ posts, dispatch }) {  
+
+function Show() {
+
+  const posts = useContext(PostsContext);
 
   const { id } = useParams();
   const post = posts.find(post => post.id === id);
@@ -21,7 +26,7 @@ function Show({ posts, dispatch }) {
       <div className={classes.img}>
         <ImgBox url={img} />
       </div>
-      <PostData post={post} dispatch={dispatch} />
+      <PostData post={post} />
       <PostContent description={description} />
     </Container>
     
