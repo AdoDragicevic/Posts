@@ -17,7 +17,9 @@ import seedData from "./seedData/posts";
 function App() {
   
   const [posts, setPosts] = useLocalStorageState("posts", seedData);
+  
   const [notification, setNotification] = useTemporaryState(false, 3000);
+
 
   const addPost = newPost => {
     setPosts( [newPost, ...posts] );
@@ -34,7 +36,7 @@ function App() {
     setPosts([newPost,...otherPosts]);
     setNotification({ isSuccess: true, txt: "Post updated!" });
   };
-
+  
 
   return (
     <div className="App">
@@ -46,7 +48,7 @@ function App() {
             <Redirect to="/posts" />
           </Route>
           <Route path="/posts" exact>
-            <Index posts={posts} setPosts={setPosts} />
+            <Index posts={posts} />
           </Route>
           <Route path="/posts/new" exact>
             <New addPost={addPost} setNotification={setNotification} />

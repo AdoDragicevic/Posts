@@ -6,6 +6,8 @@ function postReducer(posts, action) {
       return posts.filter(post => post.id !== action.id);
     case "UPDATE":
       return [action.newPost, ...posts.filter(post => post.id !== action.id)];
+    default:
+      return posts;
   }
 };
 
