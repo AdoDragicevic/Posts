@@ -7,10 +7,8 @@
 https://happy-davinci-1f3075.netlify.app/
 
 ### Functionalities
-* add / edit / delete post
-* search posts by author or title
-* list posts
-* open individual post
+* add / edit / list / show / delete posts
+* search by author or title
 * Cloudinary picture upload
 * multistep form
 * custom form validation
