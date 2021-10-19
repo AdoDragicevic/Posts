@@ -7,11 +7,11 @@ import Form from "../../UI/form/Form";
 import { getDateStr } from "../../../helpers/date";
 
 
-function New({ addPost, setNotification }) {
+function New({ dispatch, setNotification }) {
 
   const submit = inputData => {
-    const newInput = { ...inputData, id: uuid(), date: getDateStr() };
-    addPost(newInput);
+    const newPost = { ...inputData, id: uuid(), date: getDateStr() };
+    dispatch({ type: "ADD", newPost });
   };
 
   return (

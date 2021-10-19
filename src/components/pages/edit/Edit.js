@@ -7,14 +7,14 @@ import Header from "../../UI/header/Header";
 import Form from "../../UI/form/Form";
 
 
-function Edit({ posts, updatePost, setNotification }) {
+function Edit({ posts, dispatch, setNotification }) {
 
   const { id } = useParams();
   const post = posts.find(post => post.id === id);
 
   const submit = inputData => {
-    const updatedInput = { ...inputData, id: post.id, date: getDateStr() };
-    updatePost(post.id, updatedInput);
+    const updatedPost = { ...inputData, id: post.id, date: getDateStr() };
+    dispatch({ type: "UPDATE", id: post.id, updatedPost });
   };
 
   return (

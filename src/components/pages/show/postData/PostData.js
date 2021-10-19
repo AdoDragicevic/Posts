@@ -8,7 +8,7 @@ import Modal from "../../../layout/modal/Modal";
 import classes from "./PostData.module.css";
 import ConfirmationBox from "../../../UI/confirmationBox/ConfirmationBox";
 
-function PostData({ post, deletePost }) {
+function PostData({ post, dispatch }) {
 
   const { author, email, date, id } = post;
 
@@ -18,7 +18,7 @@ function PostData({ post, deletePost }) {
 
 
   const handleDelete = () => {
-    deletePost(id);
+    dispatch({ type: "DELETE", id: id });
     history.push("/posts");
   };
 

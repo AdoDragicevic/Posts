@@ -9,7 +9,7 @@ import PostContent from "./postContent/PostContent";
 
 import classes from "./Show.module.css";
 
-function Show({ posts, deletePost }) {  
+function Show({ posts, dispatch }) {  
 
   const { id } = useParams();
   const post = posts.find(post => post.id === id);
@@ -21,7 +21,7 @@ function Show({ posts, deletePost }) {
       <div className={classes.img}>
         <ImgBox url={img} />
       </div>
-      <PostData post={post} deletePost={deletePost} />
+      <PostData post={post} dispatch={dispatch} />
       <PostContent description={description} />
     </Container>
     

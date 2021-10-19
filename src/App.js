@@ -1,7 +1,9 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import useLocalStorageState from "./hooks/useLocalStorageState";
+import useReducerWithLocalStorage from "./hooks/useReducerWithLocalStorage";
 import useTemporaryState from "./hooks/useTemporaryState";
+
+import postsReducer from "./reducers/postsReducer";
 
 import Nav from "./components/layout/nav/Nav";
 import Page from "./components/layout/page/Page";
@@ -15,27 +17,9 @@ import seedData from "./seedData/posts";
 
 
 function App() {
-  
-  const [posts, setPosts] = useLocalStorageState("posts", seedData);
-  
+
+  const [posts, dispatch] = useReducerWithLocalStorage(postsReducer, seedData, "posts");
   const [notification, setNotification] = useTemporaryState(false, 3000);
-
-
-  const addPost = newPost => {
-    setPosts( [newPost, ...posts] );
-    setNotification({ isSuccess: true, txt: "Post published!" });
-  };
-
-  const deletePost = id => {
-    setPosts( posts.filter(post => post.id !== id) );
-    setNotification({ isSuccess: true, txt: "Post deleted!" });
-  };
-
-  const updatePost = (id, newPost) => {
-    const otherPosts = posts.filter(post => post.id !== id);
-    setPosts([newPost,...otherPosts]);
-    setNotification({ isSuccess: true, txt: "Post updated!" });
-  };
   
 
   return (
@@ -51,13 +35,13 @@ function App() {
             <Index posts={posts} />
           </Route>
           <Route path="/posts/new" exact>
-            <New addPost={addPost} setNotification={setNotification} />
+            <New dispatch={dispatch} setNotification={setNotification} />
           </Route>
           <Route path="/posts/:id" exact>
-            <Show posts={posts} deletePost={deletePost} />
+            <Show posts={posts} dispatch={dispatch} />
           </Route>
           <Route path="/posts/:id/edit" exact>
-            <Edit posts={posts} updatePost={updatePost} setNotification={setNotification} />
+            <Edit posts={posts} dispatch={dispatch} setNotification={setNotification} />
           </Route>
         </Switch>
       </Page>
