@@ -10,6 +10,7 @@ import Index from "./components/pages/index/Index";
 import New from "./components/pages/new/New";
 import Show from "./components/pages/show/Show";
 import Edit from "./components/pages/edit/Edit";
+import ScrollToTop from "./components/layout/scrollToTop/ScrollToTop";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Nav />
       <Page>
         <PostsProvider>
+          <ScrollToTop />
           <Switch>  
             <Route exact path="/" render={() => <Redirect to="/posts" />} />
             <Route exact path="/posts" component={Index} />
