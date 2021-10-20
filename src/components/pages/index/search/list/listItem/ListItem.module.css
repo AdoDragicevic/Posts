@@ -9,10 +9,22 @@
   color: #0D0630;
 }
 
-.img {
+.height {
   width: 100%;
   height: 250px;
   margin: .4rem auto 0 auto;
+}
+
+@media screen and (max-width: 520px) {
+  .height {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .height {
+    height: 150px;
+  }
 }
 
 .info {

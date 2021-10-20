@@ -8,9 +8,7 @@ function ListItem({ img, title, email, author }) {
   return (
     <li className={classes.root}>
       <Header>{title}</Header>
-      <div className={classes.img}>
-        <ImgBox url={img} />
-      </div>
+      <ImgBox url={img} css={classes.height} />
       <div className={classes.info}>
         <p>{email}</p>
         <p className={classes.author}>{author}</p>

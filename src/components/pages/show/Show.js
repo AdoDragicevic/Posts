@@ -23,9 +23,7 @@ function Show() {
   return (
     <Container width="small">
       <Header>{title}</Header>
-      <div className={classes.img}>
-        <ImgBox url={img} />
-      </div>
+      <ImgBox url={img} css={classes.height} />
       <PostData post={post} />
       <PostContent description={description} />
     </Container>
