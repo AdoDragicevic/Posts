@@ -4,6 +4,13 @@
   letter-spacing: 2px;
   text-align: center;
   transition: opacity 2s;
+  font-size: 32px;
+}
+
+@media screen and (max-width: 500px) {
+  .root {
+    font-size: 20px;
+  }
 }
 
 .pointer {
