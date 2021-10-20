@@ -1,10 +1,10 @@
 # Posts
 
-## Single page app made from scratch with React Hooks (including useContext & useReducer) and React Router :pencil2:
+## Single Page App made from scratch with React Hooks (including useContext & useReducer) and React Router :pencil2:
 
 ### Visit it on Netlify
 
-https://happy-davinci-1f3075.netlify.app/
+https://posts-ado.netlify.app/
 
 ### Functionalities
 * add / edit / list / show / delete posts
